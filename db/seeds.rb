@@ -7,3 +7,13 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+puts "destroy"
+Employee.destroy_all;
+Appointment.destroy_all;
+User.destroy_all;
+puts "destroy ok !!!!!"
+puts "ajout des données"
+User.create!(first_name: "benoit", last_name: "XVI", email:"JP@jesus.com", password:"coucou123", avatar_img:"...");
+User.create!(first_name: "Tintin", last_name:"Haddock", email:"mail@gmail.com", password: "coucou123", avatar_img:"...");
+puts "ok";

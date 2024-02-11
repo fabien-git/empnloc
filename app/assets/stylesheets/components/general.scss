@@ -1,0 +1,43 @@
+body{
+  font-family: "Caveat", cursive;
+  font-optical-sizing: auto;
+  font-weight: 100;
+  font-style: normal;
+}
+
+.irish-grover-regular {
+  font-family: "Irish Grover", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.roboto-regular {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+h2{
+  font-size: 36px;
+  font-weight: 800;
+  font-family: "Caveat", cursive;
+  font-optical-sizing: auto;
+}
+
+h1{
+  font-size: 48px;
+  font-weight: 800;
+  font-family: "Caveat", cursive;
+  font-optical-sizing: auto;
+}
+
+p{
+  font-family: "Roboto", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+.flex{
+  display: flex;
+  justify-content: space-between;
+}
