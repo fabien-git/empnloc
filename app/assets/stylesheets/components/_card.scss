@@ -1,0 +1,49 @@
+.cards{
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+ margin-top: 50px;
+ padding-bottom: 20px;
+ z-index: 3;
+
+}
+
+.card{
+  border-radius: 30px;
+  overflow: hidden;
+  margin-bottom: 8px;
+  width :300px;
+}
+
+.card-gradient{
+  position: relative;
+   background: linear-gradient(38deg, rgba(60, 135, 166, 1) 37%, rgba(51, 150, 193, 1) 50%, rgba(31, 100, 130, 1) 70%);
+  height: 180px;
+}
+
+.card-avatar{
+  position: absolute;
+  top:10px;
+  left: 10px;
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  background-color: white;
+}
+
+.card-info{
+  padding: 8px;
+}
+
+.card-job{
+  font-weight: bold;
+}
+
+.card-button{
+  width:100%;
+  padding: 16px 0;
+  background-color: #1B424A;
+  color: white;
+  border-radius: 25px;
+  text-align: center;
+}

@@ -41,3 +41,8 @@ p{
   display: flex;
   justify-content: space-between;
 }
+
+
+.shadow{
+  box-shadow: 0, 0, 10px, 10px, rgba(0, 0, 0,  0.2);
+}
