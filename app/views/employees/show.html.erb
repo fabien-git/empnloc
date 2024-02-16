@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+      <h1>Fiche employé</h1>
+      <table class="table table-bordered">
+        <tbody>
+          <tr>
+            <th scope="row">Prénom</th>
+            <td><%= @employee.first_name %></td>
+          </tr>
+          <tr>
+            <th scope="row">Nom</th>
+            <td><%= @employee.last_name %></td>
+          </tr>
+          <tr>
+            <th scope="row">Job</th>
+            <td><%= @employee.job_title %></td>
+          </tr>
+          <tr>
+            <th scope="row">Tarif journalier</th>
+            <td><%= @employee.price_per_day %></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <%= link_to "See all employees", root_path %>
+        <%= link_to "Delete", employee_path(@employee), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
+        %>
+    </div>
+  </div>
+</div>
