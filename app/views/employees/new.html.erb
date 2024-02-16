@@ -1,0 +1,15 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12 col-sm-10 col-sm-offset-1">
+      <h1>Create a new employee</h1>
+      <%= simple_form_for @employee do |f| %>
+        <%= f.input :first_name%>
+        <%= f.input :last_name %>
+        <%= f.input :job_title %>
+        <%= f.input :price_per_day %>
+        <%# <% f.input :avatar_img %>
+        <%= f.submit class: 'btn btn-primary' %>
+      <% end %>
+    </div>
+  </div>
+</div>
