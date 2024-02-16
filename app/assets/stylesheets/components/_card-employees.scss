@@ -1,0 +1,40 @@
+.card-employee {
+  // TEMP
+  margin-top: 300px;
+  margin-left: 150px;
+
+  width: 400px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+
+  &__header {
+    border-radius: 32px 32px 0 0;
+    min-height: 50%;
+    background: linear-gradient(45deg, #1F6482, #3C87A6, #3396C1);
+    padding: 16px;
+  }
+
+  &__body {
+    border-radius: 0 0 32px 32px;
+    padding: 16px;
+    background: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &--avatar {
+    background: #F8A4A4;
+    width: 8rem;
+    height: 8rem;
+    border-radius: 50%;
+  }
+
+  &--button {
+    margin: 8px 0;
+    background: #1B424A;
+    color: white;
+    border-radius: 16px;
+  }
+}
