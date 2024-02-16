@@ -3,6 +3,7 @@
   position: relative;
   background:linear-gradient(#3396C1, #1F6482,);
   margin-bottom: -80px;
+  z-index: 4;
   }
 
 .header::before{
@@ -20,7 +21,7 @@
  hr{
   position: relative;
   top:50px;
-  z-index: -5;
+  z-index: 3;
   display: block;
   height: 5em;
   margin: 0;

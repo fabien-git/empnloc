@@ -1,0 +1,40 @@
+.top-employee{
+  position: relative;
+  background-color: #F8A4A4;
+  z-index:2;
+  padding-top: 150px;
+  overflow-x: hidden;
+}
+
+.top-image{
+  position: absolute;
+  right: -200px;
+  top: 40px;
+
+
+}
+
+ #pink{
+  position: relative;
+  top:50px;
+  z-index: 1;
+  display: block;
+  height: 5em;
+  margin: 0;
+  border: 0;
+  overflow: visible;
+  opacity: 1;
+ }
+#pink::before{
+  position: absolute;
+  z-index: 2;
+  left: 0;
+  right: 0;
+  display: block;
+  height: 15em;
+  content: '';
+  background-color: #F8A4A4!important;
+  bottom: 0em;
+  -webkit-transform: skewY(2deg);
+  transform: skewY(2deg);
+}

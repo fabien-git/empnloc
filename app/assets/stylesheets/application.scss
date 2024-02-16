@@ -7,9 +7,17 @@
 @import "bootstrap";
 @import "font-awesome";
 
-// Your CSS partials
+// Your CSS components
 @import "components/form";
+@import "components/card";
+@import "components/title";
+
+
+
+// Your CSS section /page partial
+@import "components/all-employees";
 @import "components/general";
+@import "components/top-employee";
 @import "components/index";
 @import "pages/index";
 @import "components/header";
