@@ -1,15 +1,34 @@
-<div class="container">
-  <div class="row">
-    <div class="col-xs-12 col-sm-10 col-sm-offset-1">
-      <h1>Create a new employee</h1>
-      <%= simple_form_for @employee do |f| %>
-        <%= f.input :first_name%>
-        <%= f.input :last_name %>
-        <%= f.input :job_title %>
-        <%= f.input :price_per_day %>
-        <%# <% f.input :avatar_img %>
-        <%= f.submit class: 'btn btn-primary' %>
-      <% end %>
-    </div>
-  </div>
+<div class="form-page">
+
+<div class="container flex">
+<div class="form-container">
+  <h2>Créer votre employé</h2>
+<%= simple_form_for(@employee) do |f| %>
+  <%= f.input :first_name,input_html: { class: "input_search_form" } %>
+  <%= f.input :last_name,input_html: { class: "input_search_form" }  %>
+  <%= f.input :job_title,input_html: { class: "input_search_form" }  %>
+  <%= f.input :price_per_day,input_html: { class: "input_search_form" }  %>
+  <%= f.input :avatar_img,input_html: { class: "input_search_form" }  %>
+  <%= f.submit "Valider",  class: "button-search-employee"  %>
+<% end %>
+</div>
+<div class="form-avatar">
+  <div class="form-avatar-container">
+    <h2>Choisissez votre avatar</h2>
+    <div class="form-avatars-circle">
+  <div class="avatar-circle"> </div>
+      <script>
+        const avatar = document.querySelector(".avatar-circle")
+        const container = document.querySelector(".form-avatars-circle")
+        for (let i = 0; i < 12; i++) {
+          const newAvatar = avatar.cloneNode(true);
+          container.append(newAvatar);
+        }
+      </script>
+
+</div>
+</div>
+</div>
+</div>
+
 </div>

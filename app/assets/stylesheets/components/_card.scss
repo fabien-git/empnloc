@@ -15,6 +15,9 @@
   width :300px;
 }
 
+
+
+
 .card-gradient{
   position: relative;
    background: linear-gradient(38deg, rgba(60, 135, 166, 1) 37%, rgba(51, 150, 193, 1) 50%, rgba(31, 100, 130, 1) 70%);
@@ -46,4 +49,15 @@
   color: white;
   border-radius: 25px;
   text-align: center;
+}
+
+.card-alink{
+  display: block;
+  width:100%;
+  padding: 16px;
+  background-color: #1B424A;
+  color: white;
+  border-radius: 25px;
+  text-align: center;
+  text-decoration: none;
 }

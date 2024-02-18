@@ -11,10 +11,12 @@
 @import "components/form";
 @import "components/card";
 @import "components/title";
+@import "components/button";
 
 
 
 // Your CSS section /page partial
+@import "components/show";
 @import "components/all-employees";
 @import "components/general";
 @import "components/top-employee";

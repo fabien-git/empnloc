@@ -1,7 +1,6 @@
 body{
-  font-family: "Caveat", cursive;
-  font-optical-sizing: auto;
-  font-weight: 100;
+  font-family: "Roboto", sans-serif;
+  font-weight: 200;
   font-style: normal;
 }
 
@@ -31,11 +30,7 @@ h1{
   font-optical-sizing: auto;
 }
 
-p{
-  font-family: "Roboto", sans-serif;
-  font-weight: 200;
-  font-style: normal;
-}
+
 
 .flex{
   display: flex;
@@ -45,4 +40,20 @@ p{
 
 .shadow{
   box-shadow: 0, 0, 10px, 10px, rgba(0, 0, 0,  0.2);
+}
+
+
+.border-right{
+  border-right: 4px #F8A4A4 solid;
+  margin-right: 8px;
+  transition: all 0.3s ;
+}
+
+.expand{
+  width: 100%;
+}
+
+.group-button{
+  display: flex;
+  gap: 16px;
 }
