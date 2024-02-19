@@ -35,6 +35,11 @@ class AppointmentsController < ApplicationController
     end
   end
 
+
+  def historic
+
+  end
+
 private
 
   def appointments_params

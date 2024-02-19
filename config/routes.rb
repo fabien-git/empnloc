@@ -11,6 +11,10 @@ Rails.application.routes.draw do
   resources :employees, except: [:index] do
     resources :appointments, only: [:create]
   end
-  resources :appointments, only: [:index, :show, :destroy]
+  resources :appointments, only: [:index, :show, :destroy] do
+    collection do
+      get :historic
+    end
+  end
 
 end
