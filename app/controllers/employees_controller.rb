@@ -27,6 +27,7 @@ class EmployeesController < ApplicationController
   end
 
   def edit
+    puts "coucou"
   end
 
   def update

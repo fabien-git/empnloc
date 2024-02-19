@@ -2,12 +2,12 @@ class AppointmentsController < ApplicationController
   before_action :set_appointment, only: [:destroy]
 
   def index
-    @appointments = appointment.where(user: current_user)
+    @appointments = Appointment.where(user: current_user)
   end
 
   def new
     @employee = Employee.find(params[:id])
-    @appointment = appointment.new
+    @appointment = Appointment.new
   end
 
 
