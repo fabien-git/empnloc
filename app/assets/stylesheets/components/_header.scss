@@ -28,20 +28,21 @@
   border: 0;
   overflow: visible;
   opacity: 1;
+
+  &::before{
+    position: absolute;
+    z-index: 5;
+    left: 0;
+    right: 0;
+    display: block;
+    height: 10em;
+    content: '';
+    background-color: #1F6482!important;
+    bottom: 0em;
+    -webkit-transform: skewY(-3deg);
+    transform: skewY(-3deg);
+  }
  }
-hr::before{
-  position: absolute;
-  z-index: 5;
-  left: 0;
-  right: 0;
-  display: block;
-  height: 10em;
-  content: '';
-  background-color: #1F6482!important;
-  bottom: 0em;
-  -webkit-transform: skewY(-3deg);
-  transform: skewY(-3deg);
-}
 
 
 .header-title{

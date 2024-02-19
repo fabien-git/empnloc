@@ -9,6 +9,7 @@ class EmployeesController < ApplicationController
 
   def show
     @employee = Employee.find(params[:id])
+    @appointment = Appointment.new
   end
 
   def new
