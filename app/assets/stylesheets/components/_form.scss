@@ -27,6 +27,16 @@
   margin: 0 auto;
 }
 
+.input_search_form{
+    display: block;
+  width:100%;
+  padding:10px 8px;
+  background: white;
+  border: 0;
+  border-radius: 19px;
+  margin: 0 auto;
+}
+
 .input_search label{
   display: block;
   width:70%;
@@ -38,4 +48,71 @@
   margin:8px 0;
   background-color: #1B424A!important;
   color: white !important;
+}
+
+.button-search-employee{
+  display: block;
+  margin: 8px auto;
+  width:50%;
+  padding: 16px;
+  border-radius: 25px;
+  background-color: #1B424A!important;
+  color: white !important;
+}
+
+
+.form-container{
+  width:50%;
+  max-width: 500px;
+  margin:0 auto;
+
+  background-color: #96C3D6;
+  border-radius: 35px;
+  padding: 16px;
+
+    form{
+      width:100%;
+    }
+
+}
+
+.form-page{
+    background: linear-gradient(172deg, rgba(51, 150, 193, 1) 0%, rgba(31, 100, 130, 1) 48%, rgba(31, 100, 130, 1) 50%, rgba(248, 164, 164, 1) 50.1%);
+    min-height: 100vh;
+    padding-top: 40px;
+}
+
+.form-avatar{
+  width: 40%;
+}
+
+
+.form-avatar-container{
+   background-color: #96C3D6;
+   border-radius: 35px;
+   margin: 16px;
+   margin-top: 0;
+}
+
+
+.form-avatars-circle{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: start;
+  gap:16px;
+}
+
+.avatar-circle{
+  width:80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 4px solid pink;
+  background-color: white;
+
+}
+
+.form-avatar h2{
+  text-align: center;
+  margin-bottom: 16px;
 }

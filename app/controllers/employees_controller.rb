@@ -4,6 +4,7 @@ class EmployeesController < ApplicationController
 
   def index
     @employees = Employee.all
+    @top_employees = @employees[0,3]
   end
 
   def show

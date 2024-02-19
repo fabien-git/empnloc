@@ -1,5 +1,6 @@
-<div class="container">
-  <div class="row">
+<div class="form-page">
+  <div class="container flex">
+  <!--<div class="row">
     <div class="col-xs-12 col-sm-10 col-sm-offset-1">
       <h1>Fiche employé</h1>
       <table class="table table-bordered">
@@ -27,5 +28,25 @@
         <%= link_to "Delete", employee_path(@employee), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
         %>
     </div>
+  </div> -->
+
+  <div class="employee-container">
+<div class="card expand shadow ">
+        <div class="card-gradient">
+          <div class="card-avatar"></div>
+        </div>
+        <div class="card-info">
+          <p class="card-job"><%= @employee.job_title %></p>
+          <p class="card-price">Prix:  <%= @employee.price_per_day %></p>
+          <div class="group-button input_search ">
+            <input type="text" value="Quantité" class="w-100">
+            <%= link_to "commander", employee_path(@employee), class:"card-alink" %>
+          </div>
+        </div>
+      </div>
   </div>
+  <div class="panier">
+
+  </div>
+</div>
 </div>
