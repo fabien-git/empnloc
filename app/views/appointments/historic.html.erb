@@ -1,0 +1,29 @@
+<section class="form-page">
+
+   <div class="container">
+    <h2 ><span class="title">Liste des réservations en cours</span></h2>
+   <ul>
+        <li class="grid-cards-column-name">
+       <p class="child-element-column-name">Date de Création</p>
+       <p class="child-element-column-name">Prénom et nom</p>
+       <p class="child-element-column-name">Job</p>
+       <p class="child-element-column-name">Nombre de jours</p>
+       <p class="child-element-column-name">Prix total</p>
+       <p class="child-element-column-name">Annulation</p>
+    </li>
+    <% @appointments.each do |appointment| %>
+    <li class="grid-cards">
+       <p class="child-element"><%= appointment.created_at %></p>
+       <p class="child-element"><%= appointment.employee.first_name + "  " +appointment.employee.last_name %></p>
+       <p class="child-element"><%= appointment.employee.job_title %></p>
+       <p class="child-element"><%= appointment.renting_days %></p>
+       <p class="child-element"><%= appointment.total_price %></p>
+        <%= link_to "X", appointment_path(appointment), data: { turbo_method: "delete", turbo_confirm: "Êtes-vous vraiment vraiment sur?" }, class: "cancel" %>
+
+           </li>
+      <% end %>
+
+
+    </div>
+    </div>
+</section>

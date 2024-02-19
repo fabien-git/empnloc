@@ -9,6 +9,9 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   root to: "employees#index"
   resources :employees, except: [:index] do
+    collection do
+      get :myemployees
+    end
     resources :appointments, only: [:create]
   end
   resources :appointments, only: [:index, :show, :destroy] do

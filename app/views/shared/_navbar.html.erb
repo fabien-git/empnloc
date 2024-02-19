@@ -26,8 +26,8 @@
             <div class="avatar-pink-circle"><i class="fa-solid fa-user"></i></div>
           </a>
             <div class="dropdown-menu dropdown-menu-end version-pink" aria-labelledby="navbarDropdown">
-              <%= link_to "Gérer ses réservations", appointments_path, class: "dropdown-item version-white" %>
-              <%= link_to "Gérer ses employés", historic_appointments_path, class: "dropdown-item version-white" %>
+              <%= link_to "Gérer ses réservations", historic_appointments_path, class: "dropdown-item version-white" %>
+              <%= link_to "Gérer ses employés", myemployees_employees_path, class: "dropdown-item version-white" %>
               <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item version-white" %>
             </div>
           </li>

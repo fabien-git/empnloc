@@ -5,6 +5,7 @@
  margin-top: 50px;
  padding-bottom: 20px;
  z-index: 3;
+ position: relative;
 
 }
 
@@ -13,10 +14,12 @@
   overflow: hidden;
   margin-bottom: 8px;
   width :300px;
+  transition: all 0.3s;
+
+  &:hover{
+    transform: scale(1.05);
+  }
 }
-
-
-
 
 .card-gradient{
   position: relative;
