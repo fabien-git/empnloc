@@ -1,32 +1,35 @@
 class AppointmentsController < ApplicationController
-  before_action :set_appointement, only: [:destroy]
+  before_action :set_appointment, only: [:destroy]
 
   def index
-    @appointements = Appointement.all
+    @appointments = appointment.where(user: current_user)
   end
-
 
   def new
     @employee = Employee.find(params[:id])
-    @appointement = Appointement.new
+    @appointment = appointment.new
   end
 
 
   def create
-    @employee = Employee.find(params[:id])
-    @appointement = Appointement.new(appointements_params)
-    appointement.employee = @employee
-    if @appointement.save
-      redirect_to appointement_path(@appointement)
+    @employee = Employee.find(params[:employee_id])
+    @appointment = Appointment.new
+    @appointment.total_price = params[:price]
+    @appointment.user = current_user
+    @appointment.renting_days = 1
+    @appointment.employee = @employee
+    # @appointment.save!
+    if @appointment.save
+      redirect_to root_path
     else
-      render :new, status: :unprocessable_entity
+      redirect_to root_path
     end
   end
 
 
   def destroy
-    if @appointement.destroy
-      redirect_to employees_path(@appointement.employee), status: :see_other
+    if @appointment.destroy
+      redirect_to employees_path(@appointment.employee), status: :see_other
     else
       render :index, status: :unprocessable_entity
     end
@@ -34,11 +37,11 @@ class AppointmentsController < ApplicationController
 
 private
 
-  def appointements_params
-    params.require(:appointement).permit(:total_price, :renting_days)
+  def appointments_params
+    params.require(:appointment).permit(:total_price, :renting_days)
   end
 
-  def set_appointement
-    @appointement = Appointement.find(params[:id])
+  def set_appointment
+    @appointment = appointment.find(params[:id])
   end
 end
