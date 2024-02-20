@@ -35,6 +35,11 @@ class AppointmentsController < ApplicationController
     end
   end
 
+
+  def historic
+     @appointments = Appointment.where(user: current_user)
+  end
+
 private
 
   def appointments_params
@@ -42,6 +47,6 @@ private
   end
 
   def set_appointment
-    @appointment = appointment.find(params[:id])
+    @appointment = Appointment.find(params[:id])
   end
 end

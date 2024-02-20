@@ -46,6 +46,10 @@ class EmployeesController < ApplicationController
     end
   end
 
+  def myemployees
+    @employees = Employee.where(user: current_user)
+  end
+
   private
 
   def employee_params
