@@ -28,13 +28,11 @@
 }
 
 .card-avatar{
-  position: absolute;
-  top:10px;
-  left: 10px;
-  height: 80px;
-  width: 80px;
-  border-radius: 50%;
-  background-color: white;
+  padding: 16px;
+
+  & > img {
+    border-radius: 50%;
+  }
 }
 
 .card-info{
