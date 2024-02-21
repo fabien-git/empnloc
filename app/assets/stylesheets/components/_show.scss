@@ -1,4 +1,64 @@
+.container__show {
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
 .employee-container{
-  width: 50%;
-  padding-top: 50px;
+  // width: 50%;
+  // padding-top: 50px;
+}
+
+.panier-container{
+  // width: 50%;
+  // padding-top: 10%;
+}
+
+.panier-lists-orders{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width: 300px;
+  min-height: 300px;
+  border: 1px solid lightgrey;
+  border-radius: 30px;
+  background: #96C3D6;
+  margin-left: 20px;
+  padding: 16px;
+
+  &__body {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__footer {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 16px;
+  }
+
+  &--text {
+    padding: 0 8px;
+    color: grey;
+    border-radius: 30px;
+    background: white;
+  }
+}
+
+.panier-total-price {
+  padding: 0 8px;
+  color: white;
+  background: #F8A4A4;
+  border-radius: 30px;
+}
+
+.image-panier{
+  height: 100px;
+}
+
+.title-panier{
+  color: white;
+  font-weight: bold;
+  text-shadow: -1px 1px 4px grey;
 }

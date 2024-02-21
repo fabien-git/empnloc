@@ -1,5 +1,5 @@
 <div class="form-page">
-  <div class="container flex">
+  <div class="container flex container__show">
   <!--<div class="row">
     <div class="col-xs-12 col-sm-10 col-sm-offset-1">
       <h1>Fiche employé</h1>
@@ -31,7 +31,7 @@
   </div> -->
 
   <div class="employee-container">
-<div class="card expand shadow ">
+    <div class="card expand shadow ">
         <div class="card-gradient">
           <div class="card-avatar">
             <%= cl_image_tag @employee.photo.key, width: 150, height: 150, crop: :fill %>
@@ -43,14 +43,29 @@
           <p class="card-description"><%= @employee.description %></p>
           <p class="card-price">Prix:  <%= @employee.price_per_day %></p>
           <div class="group-button input_search ">
-            <input type="text" value="Quantité" class="w-100">
+            <input type="text" value="Quantité" class="w-100 border-pink" >
             <%= link_to "commander", employee_appointments_path(@employee,:price=>@employee.price_per_day), data: { turbo_method: "post" }, class: "card-alink" %>
           </div>
         </div>
-      </div>
+    </div>
   </div>
-  <div class="panier">
 
-  </div>
+
+  <%# <div class="panier-container"> %>
+    <div class="panier-lists-orders">
+      <h6 class="title-panier">PANIER</h6>
+      <div class="panier-lists-orders__body">
+        <span class="panier-lists-orders--text">Job title</span>
+        <span class="panier-lists-orders--text">$</span>
+        <span class="panier-lists-orders--text">qté</span>
+        <span class="panier-lists-orders--text">$</span>
+      </div>
+      <div class="panier-lists-orders__footer">
+        <%= image_tag "panier.png", class:"image-panier" %>
+        <div class="panier-total-price shadow">Total price</div>
+      </div>
+    </div>
+
+  <%# </div> %>
 </div>
 </div>
