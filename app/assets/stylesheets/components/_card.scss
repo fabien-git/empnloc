@@ -42,6 +42,12 @@
   font-weight: bold;
 }
 
+.price-pink{
+  background-color: #F8A4A4;
+  color: white;
+  padding-right: 16px;
+}
+
 .card-button{
   width:100%;
   padding: 16px 0;
@@ -60,4 +66,27 @@
   border-radius: 25px;
   text-align: center;
   text-decoration: none;
+}
+
+.card-description {
+  color: #1b424A
+}
+
+.card-first-name {
+  color: #F8A4A4;
+  position: absolute;
+  bottom: -6px;
+  margin: 0;
+  left: 10px;
+}
+
+
+.input-quantity {
+  display: block;
+  width:70%;
+  padding:10px 8px;
+  background: white;
+  border: 0;
+  border-radius: 19px;
+  margin: 0 auto;
 }
