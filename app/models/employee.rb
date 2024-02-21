@@ -1,6 +1,6 @@
 class Employee < ApplicationRecord
   has_many :appointments, dependent: :destroy
-  has_one_attached :photo
+  has_one_attached :avatar
   belongs_to :user  # géré par as_owner ?
 
   validates :first_name, :last_name, presence: true
