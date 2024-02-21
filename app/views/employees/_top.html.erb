@@ -1,18 +1,19 @@
 <section class="top-employee">
   <div class="container">
     <%= image_tag "top_employee.png", class:"top-image" %>
-    <h2 ><span class="title">Les tops employés</span></h2>
     <div class="cards">
+       <h2 ><span class="title">Les tops employés</span></h2>
      <% top_employees.each do |top_employee| %>
       <div class="card shadow">
         <div class="card-gradient">
-          <div class="card-avatar"></div>
+          <div class="card-avatar">
+            <%= cl_image_tag top_employee.photo.key, width: 100, height: 100, crop: :fill %>
+          </div>
         </div>
         <div class="card-info">
           <p class="card-job"><%= top_employee.job_title %></p>
           <p class="card-price">Prix:  <%= top_employee.price_per_day %></p>
           <%= link_to "Plus d'informations", employee_path(top_employee), class:"card-alink" %>
-
         </div>
       </div>
       <% end %>

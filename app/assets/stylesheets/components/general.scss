@@ -57,3 +57,37 @@ h1{
   display: flex;
   gap: 16px;
 }
+
+
+.backgroundPink{
+  font-weight: 400;
+  background-color: #F8A4A4;
+  transition: all 0.3s;
+
+  &:hover{
+     background-color: #aa7676;
+  }
+}
+
+.backgroundRed{
+  font-weight: 400;
+  background-color: red;
+  transition: all 0.3s;
+
+  &:hover{
+     background-color: #490c0c;
+  }
+}
+
+.dashed{
+  border: 6px dashed #F8A4A4;
+  transition: all 0.3s;
+
+    &:hover{
+     border: 6px dashed #aa7676;
+  }
+}
+
+a{
+  text-decoration: none;
+}

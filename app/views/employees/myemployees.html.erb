@@ -1,0 +1,28 @@
+<section class="form-page">
+
+   <div class="container">
+    <h2 ><span class="title">Liste de mes employés</span></h2>
+   <div class="cards">
+    <% @employees.each do |employee| %>
+      <div class="card shadow dashed">
+        <div class="card-gradient">
+          <div class="card-avatar">
+            <%= cl_image_tag employee.photo.key, width: 100, height: 100, crop: :fill %>
+          </div>
+        </div>
+        <div class="card-info">
+          <p class="card-job"><%= employee.job_title %></p>
+          <p class="card-price">Prix:  <%= employee.price_per_day %></p>
+          <div class="group-button">
+          <%= link_to "Modifier", edit_employee_path(employee), class:"card-alink backgroundPink" %>
+         <%= link_to "Supprimer", employee_path(employee), data: { turbo_method: "delete", turbo_confirm: "Êtes-vous vraiment vraiment sur?" }, class:"card-alink backgroundRed" %>
+
+        </div>
+        </div>
+      </div>
+      <% end %>
+
+
+    </div>
+    </div>
+</section>
