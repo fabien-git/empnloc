@@ -6,12 +6,14 @@
     <% employees.each do |employee| %>
       <div class="card shadow">
         <div class="card-gradient">
-          <div class="card-avatar"></div>
+          <div class="card-avatar">
+            <%= cl_image_tag employee.avatar_img, width: 100, height: 100, crop: :fill %>
+          </div>
         </div>
         <div class="card-info">
           <p class="card-job"><%= employee.job_title %></p>
           <p class="card-price">Prix:  <%= employee.price_per_day %></p>
-          <p class="card-button">PLUS D'INFORMATIONS</p>
+          <%= link_to "Plus d'informations", employee_path(employee), class:"card-alink" %>
         </div>
       </div>
       <% end %>

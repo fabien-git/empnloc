@@ -6,7 +6,9 @@
     <% @employees.each do |employee| %>
       <div class="card shadow dashed">
         <div class="card-gradient">
-          <div class="card-avatar"></div>
+          <div class="card-avatar">
+            <%= cl_image_tag employee.avatar_img, width: 100, height: 100, crop: :fill %>
+          </div>
         </div>
         <div class="card-info">
           <p class="card-job"><%= employee.job_title %></p>

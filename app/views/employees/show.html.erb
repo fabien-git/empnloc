@@ -33,10 +33,14 @@
   <div class="employee-container">
 <div class="card expand shadow ">
         <div class="card-gradient">
-          <div class="card-avatar"></div>
+          <div class="card-avatar">
+            <%= cl_image_tag @employee.avatar_img, width: 150, height: 150, crop: :fill %>
+          </div>
         </div>
         <div class="card-info">
           <p class="card-job"><%= @employee.job_title %></p>
+          <p class="card-name"><%= @employee.first_name %> <%= @employee.last_name %></p>
+          <p class="card-description"><%= @employee.description %></p>
           <p class="card-price">Prix:  <%= @employee.price_per_day %></p>
           <div class="group-button input_search ">
             <input type="text" value="Quantité" class="w-100">
