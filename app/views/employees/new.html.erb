@@ -8,24 +8,54 @@
   <%= f.input :last_name,input_html: { class: "input_search_form" }  %>
   <%= f.input :job_title,input_html: { class: "input_search_form" }  %>
   <%= f.input :price_per_day,input_html: { class: "input_search_form" }  %>
-  <%= f.input :avatar_img,input_html: { class: "input_search_form" }  %>
+  <%= f.input :photo, as: :file %>
   <%= f.submit "Valider",  class: "button-search-employee"  %>
 <% end %>
 </div>
+
 <div class="form-avatar">
   <div class="form-avatar-container">
     <h2>Choisissez votre avatar</h2>
+    <div class="selected"></div>
     <div class="form-avatars-circle">
   <div class="avatar-circle">
+    <div data-controller= "image-picker">
+      <div data-action="click->image-picker#selectImage" data-image-selector-target="image">
+        <%= cl_image_tag "mrsixqzi4lqxmxgxm4du", width: 100, height: 100, crop: :fill %>
+      </div>
+      <div data-action="click->image-picker#selectImage" data-image-selector-target="image">
+      <%= cl_image_tag "ojwxvlbutx7vrrisclm4", width: 100, height: 100, crop: :fill %>
+      </div>
+      <div data-action="click->image-picker#selectImage" data-image-selector-target="image">
+      <%= cl_image_tag "vcvzgthnfo8guahny65k", width: 100, height: 100, crop: :fill %>
+      </div>
+      <div data-action="click->image-picker#selectImage" data-image-selector-target="image">
+      <%= cl_image_tag "e6w54g2pd0ilqvops64z", width: 100, height: 100, crop: :fill %>
+      </div>
+      <div data-action="click->image-picker#selectImage" data-image-selector-target="image">
+      <%= cl_image_tag "fv24surswbq1s1tiqnqx", width: 100, height: 100, crop: :fill %>
+      </div>
+      <div data-action="click->image-picker#selectImage" data-image-selector-target="image">
+      <%= cl_image_tag "xyzftalxipkduhr85yyk", width: 100, height: 100, crop: :fill %>
+      </div>
+      <div data-action="click->image-picker#selectImage" data-image-selector-target="image">
+      <%= cl_image_tag "qunltud7i9ctrha0eht2", width: 100, height: 100, crop: :fill %>
+      </div>
+      <div data-action="click->image-picker#selectImage" data-image-selector-target="image">
+      <%= cl_image_tag "o8ow8hfqcksnspi8lkrt", width: 100, height: 100, crop: :fill %>
+      </div>
+    </div>
+    </div>
+
   </div>
-      <script>
+      <%# <script>
         const avatar = document.querySelector(".avatar-circle")
         const container = document.querySelector(".form-avatars-circle")
         for (let i = 0; i < 12; i++) {
           const newAvatar = avatar.cloneNode(true);
           container.append(newAvatar);
         }
-      </script>
+      </script> %>
 
 </div>
 </div>
