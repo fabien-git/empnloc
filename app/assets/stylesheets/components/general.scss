@@ -91,3 +91,12 @@ h1{
 a{
   text-decoration: none;
 }
+
+.row {
+  display: flex;
+}
+
+.column {
+  flex: 33.33%;
+  padding: 5px;
+}

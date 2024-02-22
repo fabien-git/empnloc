@@ -1,5 +1,5 @@
 <div class="form-page">
-
+<div data-controller="select-image">
 <div class="container flex">
 <div class="form-container">
   <h2>Créer votre employé</h2>
@@ -9,45 +9,36 @@
   <%= f.input :job_title,input_html: { class: "input_search_form" }  %>
   <%= f.input :price_per_day,input_html: { class: "input_search_form" }  %>
   <%= f.input :avatar, as: :file %>
+  <div data-select-image-target="displayElement" class="">
+  </div>
   <%= f.submit "Valider",  class: "button-search-employee"  %>
-<% end %>
+  <% end %>
 </div>
 
-<div class="form-avatar">
-  <div class="form-avatar-container">
-    <h2>Choisissez votre avatar</h2>
-    <div class="selected"></div>
-    <div class="form-avatars-circle">
-  <div class="avatar-circle">
-    <div data-controller= "image-picker">
-      <div data-action="click->image-picker#selectImage" data-image-selector-target="image">
-        <%= cl_image_tag "mrsixqzi4lqxmxgxm4du", width: 100, height: 100, crop: :fill %>
+
+  <div class="form-avatar">
+    <div class="form-avatar-container">
+      <h2>Choisissez votre avatar</h2>
+      <div class="form-avatars-circle">
+        <div data-action="click->select-image#pick">
+          <div class="card-avatar">
+                <%= cl_image_tag "yc7a35oixs89le9n9m2j8wjvq8h7", width: 150, height: 150, crop: :fill%>
+                <%= cl_image_tag "2yo6i7ikpsthd5fq5pzd6tyx6d9t", width: 150, height: 150, crop: :fill%>
+                <%= cl_image_tag "zkg2fpdzdyk5nigoy0vhc91eamgf", width: 150, height: 150, crop: :fill%>
+                <%= cl_image_tag "7y89f86wo22kwjt336bi86jmoojh", width: 150, height: 150, crop: :fill%>
+                <%= cl_image_tag "gb3ip6nyd6zc4tplaaaa6ryg8hyr", width: 150, height: 150, crop: :fill%>
+                <%= cl_image_tag "hf462pvn41xrlcrp4vnweuud9r0w", width: 150, height: 150, crop: :fill%>
+                <%= cl_image_tag "ct2krr5rmrnpwyam554qhwgvyoju", width: 150, height: 150, crop: :fill%>
+                <%= cl_image_tag "hagr75c01lvw7pvmldln39l8281k", width: 150, height: 150, crop: :fill%>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-      <div data-action="click->image-picker#selectImage" data-image-selector-target="image">
-      <%= cl_image_tag "ojwxvlbutx7vrrisclm4", width: 100, height: 100, crop: :fill %>
-      </div>
-      <div data-action="click->image-picker#selectImage" data-image-selector-target="image">
-      <%= cl_image_tag "vcvzgthnfo8guahny65k", width: 100, height: 100, crop: :fill %>
-      </div>
-      <div data-action="click->image-picker#selectImage" data-image-selector-target="image">
-      <%= cl_image_tag "e6w54g2pd0ilqvops64z", width: 100, height: 100, crop: :fill %>
-      </div>
-      <div data-action="click->image-picker#selectImage" data-image-selector-target="image">
-      <%= cl_image_tag "fv24surswbq1s1tiqnqx", width: 100, height: 100, crop: :fill %>
-      </div>
-      <div data-action="click->image-picker#selectImage" data-image-selector-target="image">
-      <%= cl_image_tag "xyzftalxipkduhr85yyk", width: 100, height: 100, crop: :fill %>
-      </div>
-      <div data-action="click->image-picker#selectImage" data-image-selector-target="image">
-      <%= cl_image_tag "qunltud7i9ctrha0eht2", width: 100, height: 100, crop: :fill %>
-      </div>
-      <div data-action="click->image-picker#selectImage" data-image-selector-target="image">
-      <%= cl_image_tag "o8ow8hfqcksnspi8lkrt", width: 100, height: 100, crop: :fill %>
-      </div>
-    </div>
     </div>
 
-  </div>
+
+
       <%# <script>
         const avatar = document.querySelector(".avatar-circle")
         const container = document.querySelector(".form-avatars-circle")
