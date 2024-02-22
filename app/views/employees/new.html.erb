@@ -4,16 +4,19 @@
 <div class="form-container">
   <h2>Créer votre employé</h2>
 <%= simple_form_for(@employee) do |f| %>
-  <%= f.input :first_name,input_html: { class: "input_search_form" } %>
-  <%= f.input :last_name,input_html: { class: "input_search_form" }  %>
-  <%= f.input :job_title,input_html: { class: "input_search_form" }  %>
-  <%= f.input :price_per_day,input_html: { class: "input_search_form" }  %>
+  <%= f.error_notification %>
+  <%= f.input :first_name, input_html: { class: "input_search_form" } %>
+  <%= f.input :last_name, input_html: { class: "input_search_form" }  %>
+  <%= f.input :job_title, input_html: { class: "input_search_form" }  %>
+  <%= f.input :description, input_html: { class: "input_search_form" }  %>
+  <%= f.input :price_per_day, input_html: { class: "input_search_form" }  %>
   <%= f.input :avatar, as: :file %>
   <div data-select-image-target="displayElement" class="">
   </div>
-  <%= f.submit "Valider",  class: "button-search-employee"  %>
+  <%= f.button :submit, "Valider",  class: "button-search-employee"  %>
   <% end %>
 </div>
+
 
 
   <div class="form-avatar">

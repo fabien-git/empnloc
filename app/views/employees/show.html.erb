@@ -34,7 +34,9 @@
     <div class="card expand shadow ">
         <div class="card-gradient">
           <div class="card-avatar">
+            <% if @employee.avatar.key != nil %>
             <%= cl_image_tag @employee.avatar.key, width: 150, height: 150, crop: :fill %>
+            <% end %>
           </div>
         </div>
         <div class="card-info">
