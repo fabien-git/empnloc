@@ -53,15 +53,22 @@
 
   <%# <div class="panier-container"> %>
     <div class="panier-lists-orders">
-      <h6 class="title-panier">PANIER</h6>
       <div class="panier-lists-orders__body">
-        <span class="panier-lists-orders--text">Job title</span>
-        <span class="panier-lists-orders--text">$</span>
-        <span class="panier-lists-orders--text">qté</span>
-        <span class="panier-lists-orders--text">$</span>
+        <h6 class="title-panier">PANIER</h6>
+        <div class="panier-lists-orders__employee">
+          <span class="panier-lists-orders--text">Job title #1</span>
+          <span class="panier-lists-orders--text">$10</span>
+          <span class="panier-lists-orders--text">1</span>
+          <span class="panier-lists-orders--text">$10</span>
+        </div>
+        <div class="panier-lists-orders__employee">
+          <span class="panier-lists-orders--text">Job title #2</span>
+          <span class="panier-lists-orders--text">$20</span>
+          <span class="panier-lists-orders--text">2</span>
+          <span class="panier-lists-orders--text">$40</span>
+        </div>
       </div>
       <div class="panier-lists-orders__footer">
-        <%= image_tag "panier.png", class:"image-panier" %>
         <div class="panier-total-price shadow">Total price</div>
       </div>
     </div>
