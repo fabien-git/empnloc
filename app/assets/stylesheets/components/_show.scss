@@ -27,22 +27,35 @@
   padding: 16px;
 
   &__body {
-    display: flex;
-    justify-content: space-between;
+    margin-bottom: 16px;
+  }
+
+  &__employee {
+    /* width: 100%; */
+    display: grid;
+    grid-template-columns: 100px 1fr 1fr 1fr;
+    border: 2px solid #3C87A6;
+    border-radius: 35px;
+    padding: 4px 8px;
+    background-color: #fff;
+
+    &:not(:last-child) {
+      margin-bottom: 16px;
+    }
   }
 
   &__footer {
     display: flex;
-    align-items: flex-end;
-    justify-content: space-between;
-    gap: 16px;
+    justify-content: end;
   }
 
   &--text {
+    margin: 4px;
     padding: 0 8px;
-    color: grey;
+    color: white;
     border-radius: 30px;
-    background: white;
+    background: #3C87A6;
+    font-size: x-small;
   }
 }
 
@@ -51,10 +64,6 @@
   color: white;
   background: #F8A4A4;
   border-radius: 30px;
-}
-
-.image-panier{
-  height: 100px;
 }
 
 .title-panier{
