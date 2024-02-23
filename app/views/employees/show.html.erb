@@ -30,12 +30,8 @@
   </div>
 
 
-  <%# <div class="panier-container"> %>
-    <div class="panier-lists-orders">
-      <div class="panier-lists-orders__body">
-        <div class="panier-lists-orders__employee">
-          <div class="commande-orders">
-      <div class="commande-orders__body ">
+  <div class="commande-orders">
+    <div class="commande-orders__body ">
       <%= simple_form_for(@appointment) do |f| %>
         <%= f.input :debut_de_reservation,as: :string,input_html: { data: { controller: "datepicker" }} %>
         <%= f.input :fin_de_reservation,as: :string,input_html: { data: { controller: "datepicker" }} %>
@@ -46,13 +42,11 @@
       <%= f.submit "Commander",  class: "button-commande"  %>
       </div>
       <% end %>
-        </div>
-      </div>
-      <div class="commande-orders__footer">
-      </div>
-    </div>
+  </div>
+  </div>
+  </div>
 
- </div>
+
   <section class="review_section" >
   <div class="container flex_review">
      <%= render "review", reviews: @reviews %>
