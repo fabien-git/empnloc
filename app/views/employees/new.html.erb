@@ -10,7 +10,7 @@
   <%= f.input :job_title, input_html: { class: "input_search_form" }  %>
   <%= f.input :description, input_html: { class: "input_search_form" }  %>
   <%= f.input :price_per_day, input_html: { class: "input_search_form" }  %>
-  <%= f.input :avatar, as: :file %>
+  <%= f.input :avatar, as: :hidden, input_html: {id: 'selected-image'} %>
   <div data-select-image-target="displayElement" class="">
   </div>
   <%= f.button :submit, "Valider",  class: "button-search-employee"  %>

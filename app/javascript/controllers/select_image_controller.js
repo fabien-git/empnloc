@@ -10,5 +10,6 @@ export default class extends Controller {
     console.log(event.originalTarget.outerHTML)
     this.displayElementTarget.innerHTML = ""
     this.displayElementTarget.insertAdjacentHTML('beforeend', `<div class="card-avatar">${event.originalTarget.outerHTML}</div>` )
+    document.getElementById('selected-image').value = event.originalTarget.src
   }
 }

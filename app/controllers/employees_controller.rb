@@ -1,3 +1,5 @@
+require "open-uri"
+
 class EmployeesController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
   before_action :set_employee, only: [:edit, :update, :destroy]
@@ -18,6 +20,8 @@ class EmployeesController < ApplicationController
 
   def create
     @employee = Employee.new(employee_params)
+    @employee.avatar.attach(io: URI.open(params[:employee][:avatar]), filename: "jean.jpg", content_type: "image/jpg")
+    # @employee.avatar.attach(io: URI.open(), filename: "jean.jpg", content_type: "image/jpg")
     @employee.user = current_user
     if @employee.save
       redirect_to employee_path(@employee)
@@ -53,7 +57,7 @@ class EmployeesController < ApplicationController
   private
 
   def employee_params
-    params.require(:employee).permit(:first_name, :last_name, :job_title, :description, :price_per_day, :avatar)
+    params.require(:employee).permit(:first_name, :last_name, :job_title, :description, :price_per_day)
   end
 
   def set_employee
