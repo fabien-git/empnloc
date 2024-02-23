@@ -53,6 +53,7 @@
   flex-direction: column;
   align-items: start;
 
+
   color: white;
 
 }
@@ -75,8 +76,9 @@ br{
 .header-title-logo{
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: start;
   margin-bottom: 16px;
+  gap: 24px;
 }
 
 .image-logo{

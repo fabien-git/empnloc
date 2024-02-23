@@ -1,0 +1,43 @@
+<div class="review">
+  <h3>Add your review</h3>
+<%= simple_form_for [employee, review] do |f| %>
+<%= f.input :comment  %>
+<i class="fa-solid fa-star star" data-number="1"></i>
+<i class="fa-solid fa-star star" data-number="2"></i>
+<i class="fa-solid fa-star star" data-number="3"></i>
+<i class="fa-solid fa-star star" data-number="4"></i>
+<i class="fa-solid fa-star star" data-number="5"></i>
+<%= f.hidden_field :rating, value: "valeur_masquée", class:"hidden_input" %>
+<script>
+  console.log("ok");
+  // Initialisation des variables
+  stars = document.querySelectorAll('.fa-solid.fa-star.star');
+  rating = document.querySelector('.hidden_input');
+
+  // Display The correct number of yellow Stars
+  function pinkStar(nb){
+    stars.forEach((star, id) => {
+      if (id < nb) {
+      star.classList.add('pink');
+      } else {
+        star.classList.remove('pink');
+      }
+    })
+  }
+  stars.forEach((star) => {
+    star.addEventListener('click', (e)=>{
+      star.classList.toggle('pink');
+      pinkStar(star.dataset.number);
+      //return value rating
+      rating.value = star.dataset.number;
+    })
+  })
+</script>
+<br>
+<br>
+<div class="flex">
+<%= f.submit "Valider", class:"button-pink btn-center" %>
+</div>
+<% end %>
+
+</div>

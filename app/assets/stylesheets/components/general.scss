@@ -37,6 +37,11 @@ h1{
   justify-content: space-between;
 }
 
+.logo-nav{
+    width: 60px!important;
+    height: 60px;
+}
+
 
 .shadow{
   box-shadow: 0, 0, 10px, 10px, rgba(0, 0, 0,  0.2);
@@ -99,4 +104,21 @@ a{
 .column {
   flex: 33.33%;
   padding: 5px;
+}
+
+.pink{
+  color: pink;
+}
+
+
+.span-pink{
+  background-color:#F8A4A4;
+  padding: 0 8px;
+  color: white;
+}
+
+.span-blue{
+  background-color:#3396C1;
+  padding: 0 8px;
+  color: white
 }

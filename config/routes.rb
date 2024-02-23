@@ -13,6 +13,7 @@ Rails.application.routes.draw do
       get :myemployees
     end
     resources :appointments, only: [:create]
+    resources :reviews, only: [:new, :create]
   end
   resources :appointments, only: [:index, :show, :destroy] do
     collection do

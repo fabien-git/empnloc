@@ -10,8 +10,20 @@ class EmployeesController < ApplicationController
   end
 
   def show
+
     @employee = Employee.find(params[:id])
     @appointment = Appointment.new
+    @reviews = Review.where(employee: params[:id])
+    @review = Review.new
+    total_rating = 0
+    if @reviews.present?
+      @reviews.each do |review|
+      total_rating += review.rating
+    end
+    @average_rating = (total_rating / @reviews.count).round
+  end
+
+
   end
 
   def new
@@ -19,6 +31,7 @@ class EmployeesController < ApplicationController
   end
 
   def create
+
     @employee = Employee.new(employee_params)
     @employee.avatar.attach(io: URI.open(params[:employee][:avatar]), filename: "jean.jpg", content_type: "image/jpg")
     # @employee.avatar.attach(io: URI.open(), filename: "jean.jpg", content_type: "image/jpg")
@@ -63,5 +76,7 @@ class EmployeesController < ApplicationController
   def set_employee
     @employee = Employee.find(params[:id])
   end
+
+
 
 end

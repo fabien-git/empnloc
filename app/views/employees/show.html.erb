@@ -1,36 +1,6 @@
 <div class="form-page">
   <div data-controller="select-image">
   <div class="container flex container__show">
-  <!--<div class="row">
-    <div class="col-xs-12 col-sm-10 col-sm-offset-1">
-      <h1>Fiche employé</h1>
-      <table class="table table-bordered">
-        <tbody>
-          <tr>
-            <th scope="row">Prénom</th>
-            <td><%= @employee.first_name %></td>
-          </tr>
-          <tr>
-            <th scope="row">Nom</th>
-            <td><%= @employee.last_name %></td>
-          </tr>
-          <tr>
-            <th scope="row">Job</th>
-            <td><%= @employee.job_title %></td>
-          </tr>
-          <tr>
-            <th scope="row">Tarif journalier</th>
-            <td><%= @employee.price_per_day %></td>
-          </tr>
-        </tbody>
-      </table>
-
-      <%= link_to "See all employees", root_path %>
-        <%= link_to "Delete", employee_path(@employee), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}
-        %>
-    </div>
-  </div> -->
-
   <div class="employee-container">
     <div class="card expand shadow ">
         <div class="card-gradient">
@@ -43,11 +13,17 @@
         <div class="card-info">
           <p class="card-job"><%= @employee.job_title %></p>
           <p class="card-name"><%= @employee.first_name %> <%= @employee.last_name %></p>
+           <% if @average_rating != nil %>
+            <% stars= @average_rating %>
+            <% stars.times do  %>
+             <i class="fa-solid fa-star pink"></i>
+            <% end %>
+          <% end %>
           <p class="card-description"><%= @employee.description %></p>
-          <p class="card-price">Prix:  <%= @employee.price_per_day %></p>
+          <p class="card-price"> <%= @employee.price_per_day %> €</p>
           <div class="group-button input_search ">
             <input type="text" value="Quantité" class="w-100 border-pink" >
-            <%= link_to "commander", employee_appointments_path(@employee,:price=>@employee.price_per_day), data: { turbo_method: "post" }, class: "card-alink" %>
+            <%= link_to "commander", employee_appointments_path(@employee,:price=>@employee.price_per_day), data: { turbo_method: "post", }, class: "card-alink" %>
           </div>
         </div>
     </div>
@@ -77,6 +53,15 @@
     </div>
 
  </div>
-</div>
-</div>
+  <section class="review_section" >
+  <div class="container flex_review">
+     <%= render "review", reviews: @reviews %>
+     <%= render "review_new", employee: @employee , review: @review %>
+     </div>
+  </section>
+
+
+
+
+
 </div>
