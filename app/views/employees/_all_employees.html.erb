@@ -14,10 +14,9 @@
         </div>
         <div class="card-info">
           <p class="card-job"><%= employee.job_title %></p>
-
+          <!-- Ajout fonctionnalité rating -->
           <%
           reviews_employee = Review.where(employee: employee.id)
-          puts  reviews_employee
           total_rating = 0
           if reviews_employee.present?
             reviews_employee.each do |review_employee|
@@ -28,17 +27,13 @@
             end
           end
           %>
-
-
-
-
-
-           <% if average_rating != nil %>
+          <% if average_rating != nil %>
             <% stars= average_rating %>
             <% stars.times do  %>
              <i class="fa-solid fa-star pink"></i>
             <% end %>
              <% end %>
+               <!-- Fin Ajout fonctionnalité rating -->
           <p class="card-price"><span class="span-pink"><%= employee.price_per_day %> €</span></p>
           <%= link_to "Plus d'informations", employee_path(employee), class:"button-pink btn-center" %>
         </div>
