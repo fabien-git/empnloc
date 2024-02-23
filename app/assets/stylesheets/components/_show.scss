@@ -14,7 +14,7 @@
   // padding-top: 10%;
 // }
 
-.panier-lists-orders{
+.commande-orders{
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -25,6 +25,8 @@
   background: #96C3D6;
   margin-left: 20px;
   padding: 16px;
+  font-family: caveat;
+  font-size: 24px;
 
   &__body {
     margin-bottom: 16px;
@@ -59,15 +61,9 @@
   }
 }
 
-.panier-total-price {
+.button-commande {
   padding: 0 8px;
   color: white;
   background: #F8A4A4;
   border-radius: 30px;
-}
-
-.title-panier{
-  color: white;
-  font-weight: bold;
-  text-shadow: -1px 1px 4px grey;
 }
