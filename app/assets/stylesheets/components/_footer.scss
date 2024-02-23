@@ -1,0 +1,32 @@
+.footer{
+
+  height:400px;
+  background-color:#71A8B5 ;
+}
+
+
+ #hr-footer{
+  position: relative;
+  top:50px;
+  z-index: 3;
+  display: block;
+  height: 5em;
+  margin: 0;
+  border: 0;
+  overflow: visible;
+  opacity: 1;
+
+  &::before{
+    position: absolute;
+    z-index: 5;
+    left: 0;
+    right: 0;
+    display: block;
+    height: 15em;
+    content: '';
+    background-color: #71A8B5!important;
+    bottom: 0em;
+    -webkit-transform: skewY(-3deg);
+    transform: skewY(-3deg);
+  }
+ }

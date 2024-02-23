@@ -15,6 +15,12 @@
   margin-bottom: 8px;
   width :300px;
   transition: all 0.3s;
+}
+
+
+.card-animate{
+
+  transition: all 0.3s;
 
   &:hover{
     transform: scale(1.05);
@@ -41,10 +47,17 @@
 .card-info{
   padding: 8px;
   font-weight: normal;
+
+  i{
+    margin:8px 0;
+  }
 }
 
 .card-job{
   font-weight: bold;
+  font-size: 20px!important;
+  font-family:"Caveat", cursive ;
+  margin: 0;
 }
 
 .price-pink{

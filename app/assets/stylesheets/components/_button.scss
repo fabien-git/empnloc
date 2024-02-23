@@ -1,8 +1,26 @@
 .button-pink{
+
 font-family: "Irish Grover", system-ui;
   font-weight: 400;
   font-style: normal;
-  background-color: #F8A4A4;
+  background-color: #F8A4A4!important;
   color:white;
   border-radius: 20px;
+}
+
+.button-blue{
+
+font-family: "Irish Grover", system-ui;
+  font-weight: 400;
+  font-style: normal;
+  background-color: #3396C1!important;
+  color:white;
+  border-radius: 20px;
+}
+
+.btn-center{
+  margin: 0 auto;
+  border:none;
+  padding:8px 16px;
+  font-size: 20px;
 }

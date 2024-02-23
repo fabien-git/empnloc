@@ -1,0 +1,36 @@
+
+    <ul class="reviews_list">
+      <h3>Reviews</h3>
+
+      <% @reviews.each do |review| %>
+      <li>
+        <div class="reviews_list_inline">
+          <% if review.rating != nil %>
+            <% stars= review.rating  %>
+            <% stars.times do  %>
+             <i class="fa-solid fa-star pink"></i>
+            <% end %>
+          <% end %>
+          <% time = Time.now %>
+          <%resultat_time = ((time - review.created_at.to_time)/60).floor %>
+          <% if resultat_time == 0 %>
+          <span><%= "less than a minute" %></span>
+          <% end %>
+          <% if resultat_time > 0 && resultat_time < 60 %>
+          <span><%= "there are #{resultat_time} minutes" %></span>
+          <% end %>
+          <% if resultat_time > 60 && resultat_time < 1440 %>
+          <span><%= "there are  #{resultat_time/60} hours" %></span>
+          <% end %>
+          <% if resultat_time > 1440  %>
+          <span><%= "there are  #{resultat_time/60/24} days" %></span>
+          <% end %>
+
+
+        </div>
+        <p class="review_comment">
+        <%= review.comment %>
+        </p>
+      </li>
+      <% end %>
+    </ul>

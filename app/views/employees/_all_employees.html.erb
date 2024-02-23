@@ -4,7 +4,7 @@
     <h2 ><span class="title">Nos employés</span></h2>
    <div class="cards">
     <% employees.each do |employee| %>
-      <div class="card shadow">
+      <div class="card card-animate shadow">
         <div class="card-gradient">
           <div class="card-avatar">
             <% if employee.avatar.key != nil %>
@@ -14,8 +14,33 @@
         </div>
         <div class="card-info">
           <p class="card-job"><%= employee.job_title %></p>
-          <p class="card-price">Prix:  <%= employee.price_per_day %></p>
-          <%= link_to "Plus d'informations", employee_path(employee), class:"card-alink" %>
+
+          <%
+          reviews_employee = Review.where(employee: employee.id)
+          puts  reviews_employee
+          total_rating = 0
+          if reviews_employee.present?
+            reviews_employee.each do |review_employee|
+              total_rating += review_employee.rating
+            end
+            if reviews_employee
+            average_rating = (total_rating / reviews_employee.count).round
+            end
+          end
+          %>
+
+
+
+
+
+           <% if average_rating != nil %>
+            <% stars= average_rating %>
+            <% stars.times do  %>
+             <i class="fa-solid fa-star pink"></i>
+            <% end %>
+             <% end %>
+          <p class="card-price"><span class="span-pink"><%= employee.price_per_day %> €</span></p>
+          <%= link_to "Plus d'informations", employee_path(employee), class:"button-pink btn-center" %>
         </div>
       </div>
       <% end %>
