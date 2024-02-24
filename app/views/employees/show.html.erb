@@ -1,4 +1,4 @@
-<div class="form-page">
+<div class="form-page" data-controller="complete-form">
   <div data-controller="select-image">
   <div class="container flex container__show">
   <div class="employee-container">
@@ -20,7 +20,7 @@
             <% end %>
           <% end %>
           <p class="card-description"><%= @employee.description %></p>
-          <p class="card-price"> <%= @employee.price_per_day %> €</p>
+          <p class="card-price" > <span data-complete-form-target="price"><%= @employee.price_per_day %></span> €</p>
           <div class="group-button input_search ">
             <input type="text" value="Quantité" class="w-100 border-pink" >
             <%= link_to "commander", employee_appointments_path(@employee,:price=>@employee.price_per_day), data: { turbo_method: "post", }, class: "card-alink" %>
@@ -31,14 +31,14 @@
 
 
   <div class="commande-orders">
-    <div class="commande-orders__body ">
-      <%= simple_form_for(@appointment) do |f| %>
-        <%= f.input :debut_de_reservation,as: :string,input_html: { data: { controller: "datepicker" }} %>
-        <%= f.input :fin_de_reservation,as: :string,input_html: { data: { controller: "datepicker" }} %>
-        <%= f.label :renting_days, label: 'Nombre de jours' %>
-        <%= f.input :renting_days,label: false, input_html: { class: "commande-orders__employee" } %>
+    <div class="commande-orders__body"  >
+      <%= simple_form_for [@employee, @appointment] do |f| %>
+        <%= f.input :debut_de_reservation,as: :string,input_html: { data: { controller: "datepicker", action: "input->complete-form#complete_debut" }} %>
+        <%= f.input :fin_de_reservation,as: :string,input_html: { data: { controller: "datepicker", action: "input->complete-form#complete_fin" }} %>
+        <%= f.label :renting_days, label: 'Nombre de jours'  %>
+        <%= f.input :renting_days,label: false, input_html: { class: "commande-orders__employee", data: { target: 'complete-form.renting' } } %>
         <%= f.label :total_price, label: 'Prix total' %>
-        <%= f.input :total_price,readonly: true,label: false,input_html: { class: "commande-orders__employee" }  %>
+        <%= f.input :total_price,readonly: true,label: false,input_html: { class: "commande-orders__employee" , data: { target: 'complete-form.totalprice' } }   %>
       <%= f.submit "Commander",  class: "button-commande"  %>
       </div>
       <% end %>
