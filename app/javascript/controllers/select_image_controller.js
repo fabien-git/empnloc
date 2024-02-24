@@ -7,9 +7,9 @@ export default class extends Controller {
   pick(event) {
     console.log("Picking an image")
     console.log(this.element)
-    console.log(event.originalTarget.outerHTML)
+    console.log(event.target.src)
     this.displayElementTarget.innerHTML = ""
-    this.displayElementTarget.insertAdjacentHTML('beforeend', `<div class="card-avatar">${event.originalTarget.outerHTML}</div>` )
-    document.getElementById('selected-image').value = event.originalTarget.src
+    this.displayElementTarget.insertAdjacentHTML('beforeend', `<div class="card-avatar"><img width="150" height="150" src=${event.target.src}></div>` )
+    document.getElementById('selected-image').value = event.target.src
   }
 }

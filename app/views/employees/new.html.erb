@@ -12,11 +12,13 @@
   <%= f.input :price_per_day, input_html: { class: "input_search_form" }  %>
   <%= f.input :avatar, as: :hidden, input_html: {id: 'selected-image'} %>
   <div data-select-image-target="displayElement" class="">
+    <div class="card-avatar">
+      <%= cl_image_tag "yc7a35oixs89le9n9m2j8wjvq8h7", width: 150, height: 150, crop: :fill%>
+    </div>
   </div>
   <%= f.button :submit, "Valider",  class: "button-search-employee"  %>
   <% end %>
 </div>
-
 
 
   <div class="form-avatar">
@@ -38,7 +40,6 @@
           </div>
         </div>
       </div>
-    </div>
 
 
 
@@ -52,8 +53,4 @@
       </script> %>
 
 </div>
-</div>
-</div>
-</div>
-
 </div>
