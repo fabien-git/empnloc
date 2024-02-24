@@ -8,18 +8,12 @@ export default class extends Controller {
   debut = null;
   fin = null;
 
-  connect() {
-    console.log('Hello from complete_form.js')
-  }
-
   complete_debut(e) {
-    this.debut = e.target.value
-    console.log(this.priceTarget.textContent);
+    this.debut = e.target.value;
     this.calcul();
   }
   complete_fin(e) {
     this.fin = e.target.value
-    console.log(this.fin)
     this.calcul();
   }
 
@@ -29,7 +23,6 @@ export default class extends Controller {
       const date2 = new Date(this.fin);
       const differenceDays = Math.floor((date2 - date1) / (1000 * 60 * 60 * 24));
       this.rentingTarget.value = differenceDays;
-      console.log(this.priceTarget);
       this.totalpriceTarget.value = parseInt(this.priceTarget.textContent) * differenceDays;
     }
 
