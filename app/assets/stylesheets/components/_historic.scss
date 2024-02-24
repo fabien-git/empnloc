@@ -3,7 +3,7 @@
 .grid-cards{
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(5, 2fr) 1fr;
+  grid-template-columns: repeat(6, 2fr) 1fr;
   border:2px solid transparent ;
   column-gap: 8px;
   border-radius: 35px;
@@ -15,7 +15,7 @@
 .grid-cards-column-name{
   width: 100%;
   display: grid;
-  grid-template-columns: repeat(5, 2fr) 1fr;
+  grid-template-columns: repeat(6, 2fr) 1fr;
   column-gap: 8px;
   border:2px solid #3C87A6 ;
   border-radius: 35px;

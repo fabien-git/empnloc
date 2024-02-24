@@ -12,15 +12,14 @@ class AppointmentsController < ApplicationController
 
 
   def create
+
     @employee = Employee.find(params[:employee_id])
-    @appointment = Appointment.new
-    @appointment.total_price = params[:price]
+    @appointment = Appointment.new(appointments_params)
     @appointment.user = current_user
-    @appointment.renting_days = 1
     @appointment.employee = @employee
-    # @appointment.save!
+    @appointment.save!
     if @appointment.save
-      redirect_to root_path
+      redirect_to employee_path(@employee)
     else
       redirect_to root_path
     end
@@ -43,7 +42,7 @@ class AppointmentsController < ApplicationController
 private
 
   def appointments_params
-    params.require(:appointment).permit(:total_price, :renting_days)
+    params.require(:appointment).permit(:total_price, :renting_days,  :debut_de_reservation, :fin_de_reservation)
   end
 
   def set_appointment
