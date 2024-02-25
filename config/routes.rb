@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   root to: "employees#index"
+ post '/employees/fetch_employee_data', to: 'employees#fetch_employee_data'
   resources :employees, except: [:index] do
     collection do
       get :myemployees

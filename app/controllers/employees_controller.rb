@@ -7,7 +7,27 @@ class EmployeesController < ApplicationController
   def index
     @employees = Employee.all
     @top_employees = @employees[0,3]
+     @employee_roulette
+
+    employee_name = params[:data]
+    @employee_roulette = Employee.find_by(job_title: employee_name)
   end
+
+
+ def fetch_employee_data
+    # Afficher les noms des paramètres reçus dans la console
+    puts "Noms des paramètres reçus : #{params.keys}"
+
+    # Récupérer le nom de l'employé à partir des paramètres
+    employee_name = params[:data]
+
+    # Effectuer la recherche de l'employé dans la base de données
+    employee = Employee.find_by(job_title: employee_name)
+
+    # Renvoyer les données de l'employé en format JSON
+    render json: { employee: employee }
+  end
+
 
   def show
 
@@ -66,6 +86,7 @@ class EmployeesController < ApplicationController
   def myemployees
     @employees = Employee.where(user: current_user)
   end
+
 
   private
 
