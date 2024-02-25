@@ -37,7 +37,6 @@ class EmployeesController < ApplicationController
   end
 
   def create
-
     @employee = Employee.new(employee_params)
     @employee.avatar.attach(io: URI.open(params[:employee][:avatar]), filename: "jean.jpg", content_type: "image/jpg")
     # @employee.avatar.attach(io: URI.open(), filename: "jean.jpg", content_type: "image/jpg")
@@ -54,6 +53,7 @@ class EmployeesController < ApplicationController
   end
 
   def update
+    @employee.avatar.attach(io: URI.open(params[:employee][:avatar]), filename: "jean.jpg", content_type: "image/jpg")
     if @employee.update(employee_params)
       redirect_to employee_path(@employee)
     else
