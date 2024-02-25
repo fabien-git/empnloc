@@ -7,6 +7,12 @@ class EmployeesController < ApplicationController
   def index
     @employees = Employee.all
     @top_employees = @employees[0,3]
+    if params[:query].present?
+      sql_query = "job_title ILIKE :query OR description ILIKE :query OR first_name ILIKE :query OR last_name ILIKE :query"
+      @employees = Employee.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @employees = Employee.all
+    end
   end
 
   def show
