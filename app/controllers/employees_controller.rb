@@ -7,10 +7,17 @@ class EmployeesController < ApplicationController
   def index
     @employees = Employee.all
     @top_employees = @employees[0,3]
-     @employee_roulette
+    @employee_roulette
 
     employee_name = params[:data]
     @employee_roulette = Employee.find_by(job_title: employee_name)
+
+    if params[:query].present?
+      sql_query = "job_title ILIKE :query OR description ILIKE :query OR first_name ILIKE :query OR last_name ILIKE :query"
+      @employees = Employee.where(sql_query, query: "%#{params[:query]}%")
+    else
+      @employees = Employee.all
+    end
   end
 
 
@@ -51,7 +58,6 @@ class EmployeesController < ApplicationController
   end
 
   def create
-
     @employee = Employee.new(employee_params)
     @employee.avatar.attach(io: URI.open(params[:employee][:avatar]), filename: "jean.jpg", content_type: "image/jpg")
     # @employee.avatar.attach(io: URI.open(), filename: "jean.jpg", content_type: "image/jpg")
@@ -68,6 +74,7 @@ class EmployeesController < ApplicationController
   end
 
   def update
+    @employee.avatar.attach(io: URI.open(params[:employee][:avatar]), filename: "jean.jpg", content_type: "image/jpg")
     if @employee.update(employee_params)
       redirect_to employee_path(@employee)
     else

@@ -39,18 +39,21 @@
 
        <div id="employee_img"></div>
     </div>
+
     <div class="features-search">
       <form action="" class="form-search">
         <div class="input_search">
-          <label for="employ-search">Employé recherché</label>
-          <input type="text" name="employ-search" class="input-search" placeholder="Pompier"/>
+            <%= form_with url: employees_path, method: :get, class: "input-search" do %>
+              <%= text_field_tag :query,
+                params[:query],
+                class: "form-control",
+                placeholder: "Employé recherché"
+              %>
         </div>
         <div class="input_search">
-          <label for="date-search">Quand?</label>
-          <input type="text" name="date-search" class="input-search" placeholder="Vos dates" />
+            <%= submit_tag "Rechercher", name: "", class: "button-pink card-animate" %>
+            <% end %>
         </div>
-        <div class="input_search">
-          <input type="submit" class="button-pink" placeholder="Vos dates" value="Rechercher" />
         </div>
 
       </form>
