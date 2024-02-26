@@ -54,10 +54,22 @@
 }
 
 .card-job{
-  font-weight: bold;
-  font-size: 20px!important;
+  font-weight: bolder;
+  font-size: 24px!important;
   font-family:"Caveat", cursive ;
   margin: 0;
+}
+
+.card-description{
+  display: block;
+  font-weight: bolder;
+  font-size: 14px!important;
+  font-family:"Caveat", cursive ;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  height: 44px;
+  margin: 0;
+
 }
 
 .price-pink{

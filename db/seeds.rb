@@ -1,4 +1,16 @@
 require "open-uri"
+
+
+  def average_rating(employee)
+    reviews_employee = Review.where(employee: employee)
+    count = 0
+    reviews_employee.each do |review|
+      count += review.rating
+    end
+    employee.rating = count / reviews_employee.count
+    employee.save!
+
+  end
 # This file should ensure the existence of records required to run the application in every environment (production,
 # development, test). The code here should be idempotent so that it can be executed at any point in every environment.
 # The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
@@ -89,3 +101,26 @@ gerard.avatar.attach(io: gerard_file, filename: "gerard.jpg", content_type: "ima
 gerard.save
 
 puts "#{Employee.count} employees created!"
+
+puts "Creating reviews ..."
+employees = Employee.all
+employees.each do |employee|
+  commentaires =['Une place VIP réservée pour vous, la star du jour! On prépare déjà le tapis rouge',
+  "Préparez-vous à être chouchouté comme une licorne dans un champ de cupcakes. Réservation confirmée",
+  " Un parcours de transformation inspirant. J'ai retrouvé ma motivation grâce à des encouragements plus forts que mon réveil matin!",
+  "Atelier d'art : Une explosion créative! J'ai manié le pinceau comme un artiste maudit en quête d'absolu. Résultat : un chef-d'œuvre à faire rougir Picasso!",
+  "Une expérience zen qui m'a fait voyager jusqu'aux confins de mon esprit. J'ai retrouvé la flexibilité d'un chat en quête de croquettes",
+  "ne expérience relaxante à souhait. J'ai flotté comme une méduse dans l'océan de la sérénité"
+];
+  numbers_review =  rand(2..6)
+  numbers_review.times do
+    rating =  rand(2..5)
+    Review.create!(employee: employee, rating: rating, comment: commentaires.sample)
+  end
+puts "reviews created!"
+
+puts "Update rating employees ..."
+  average_rating(employee)
+end
+
+puts "Update employees done!"

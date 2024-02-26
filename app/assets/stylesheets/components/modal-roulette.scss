@@ -24,6 +24,10 @@
     animation:  linear 0.3s slidein
 }
 
+.slideout {
+   animation:  linear 0.2s slideout
+}
+
 
 .random-job{
   position: relative;
@@ -39,6 +43,14 @@
   }
   to{
     transform:skewX(-10deg) translateX(0%);
+  }
+}
+@keyframes slideout{
+  from{
+    transform: skewX(-10deg) translateX(0%);
+  }
+  to{
+    transform:skewX(-10deg) translateX(-200%);
   }
 }
 
