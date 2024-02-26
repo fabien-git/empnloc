@@ -1,4 +1,12 @@
-<div class="header">
+<div class="header" data-controller="employe-roulette">
+  <div class="modal-roulette">
+      <div class="modal-roulette-content ">
+        <h2><span class="title">Employé roulette!! Youhoou!</span></h2>
+          <div class="random-job">
+              <div class="redirection-employee-roulette" data-action="click->employe-roulette#result">Valider ce choix</div>
+          </div>
+      </div>
+  </div>
   <div class="container flex">
     <div class="header-title">
     <!-- <div class="header-title-logo">
@@ -47,7 +55,9 @@
             <% end %>
         </div>
         </div>
+
       </form>
+      <button class="button-pink btn-center mt-5" data-action="click->employe-roulette#modal">Employé Roulette</button>
     </div>
 
 

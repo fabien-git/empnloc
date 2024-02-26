@@ -1,0 +1,82 @@
+.modal-roulette{
+  display: none;
+  top: -100px;
+  justify-content: center;
+  position: absolute;
+  min-height:200vh;
+  min-width: 100vw;
+  background-color: rgba(0,0,0,0.6);
+  padding-top: 130px;
+  z-index: 20;
+}
+
+.modal-roulette-content{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap:50px;
+  background-color:#F8A4A4 ;
+  transform: skewX(-10deg);
+  width: 600px;
+  height: 500px;
+  padding-top: 50px;
+  border: 6px dashed white;
+    animation:  linear 0.3s slidein
+}
+
+
+.random-job{
+  position: relative;
+  background-color: white;
+  font-weight: bolder;
+
+
+}
+
+@keyframes slidein{
+  from{
+    transform: skewX(-10deg) translateX(150%);
+  }
+  to{
+    transform:skewX(-10deg) translateX(0%);
+  }
+}
+
+.random-job p:nth-child(2){
+    color:rgb(173, 173, 173);
+  }
+.random-job p:nth-child(3){
+    color:rgb(128, 126, 126);
+  }
+.random-job p:nth-child(4){
+        background-color: #3C87A6;
+        padding:8px 0;
+    color:rgb(255, 255, 255);
+  }
+.random-job p:nth-child(5){
+    color:rgb(102, 102, 102);
+  }
+.random-job p:nth-child(6){
+    color:rgb(173, 173, 173);
+  }
+
+
+
+.redirection-employee-roulette{
+  border: 3px solid #F8A4A4;
+  display: none;
+  position: absolute;
+  bottom: -80px;
+  padding: 8px 16px;
+  background-color: white;
+  font-size: 20px;
+  font-weight: bolder;
+  cursor: pointer;
+  transition: all 0.3s;
+
+  &:hover{
+     background-color: #F8A4A4;
+     color: white;
+     border: 3px solid white;
+  }
+}
