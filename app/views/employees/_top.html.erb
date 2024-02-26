@@ -12,22 +12,13 @@
         </div>
         <div class="card-info">
           <p class="card-job"><%= top_employee.job_title %></p>
+ <p><% if top_employee.rating %>
+ <%top_employee.rating.times do %>
+ <i class="fa-solid fa-star pink"></i>
+ <% end %>
+<% end %>
+ </p>
 
-<!-- Ajout fonctionnalité rating -->
-          <%
-          reviews_employee = Review.where(employee: top_employee.id)
-          total_rating = 0
-          if reviews_employee.present?
-            reviews_employee.each do |review_employee|
-              total_rating += review_employee.rating
-            end
-            average_rating = (total_rating / reviews_employee.count).round
-          end
-              if average_rating != nil
-            average_rating.times do  %>
-             <i class="fa-solid fa-star pink"></i>
-            <% end
-          end %>
  <!-- Fin Ajout fonctionnalité rating -->
 
           <p class="card-price"><span class="span-blue"><%= top_employee.price_per_day %> €</span></p>

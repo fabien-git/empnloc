@@ -9,7 +9,7 @@
 <i class="fa-solid fa-star star" data-number="5"></i>
 <%= f.hidden_field :rating, value: "valeur_masquée", class:"hidden_input" %>
 <script>
-  console.log("ok");
+
   // Initialisation des variables
   stars = document.querySelectorAll('.fa-solid.fa-star.star');
   rating = document.querySelector('.hidden_input');
@@ -32,6 +32,21 @@
       rating.value = star.dataset.number;
     })
   })
+
+    stars.forEach((star) => {
+    star.addEventListener('mouveover', (e)=>{
+      star.classList.toggle('pink');
+      pinkStar(star.dataset.number);
+      //return value rating
+      rating.value = star.dataset.number;
+    })
+  })
+
+
+
+
+
+
 </script>
 <br>
 <br>

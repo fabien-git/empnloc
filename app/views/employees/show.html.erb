@@ -22,8 +22,7 @@
           <p class="card-description"><%= @employee.description %></p>
           <p class="card-price" > <span data-complete-form-target="price"><%= @employee.price_per_day %></span> €</p>
           <div class="group-button input_search ">
-            <input type="text" value="Quantité" class="w-100 border-pink" >
-            <%= link_to "commander", employee_appointments_path(@employee,:price=>@employee.price_per_day), data: { turbo_method: "post", }, class: "card-alink" %>
+
           </div>
         </div>
     </div>

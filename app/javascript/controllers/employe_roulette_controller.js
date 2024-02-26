@@ -13,9 +13,13 @@ export default class extends Controller {
 
   result() {
     const pEmployee_roulette = document.querySelector('.random-job p:nth-child(4)').textContent;
+    const modal = document.querySelector('.modal-roulette-content');
+    modal.classList.add('slideout');
+    modal.style.transform = "skewX(-10deg) translateX(-200%)";
+
+
 
     function sendData(pEmployee_roulette) {
-      const dataToSend = { key: 'value' }; // Données à envoyer
       fetch('/employees/fetch_employee_data', {
         method: 'POST',
         headers: {
@@ -27,13 +31,14 @@ export default class extends Controller {
         .then(response => response.json())
         .then(data => {
           console.log('transmission');
-          console.log(data.employee.id); // Faire quelque chose avec la réponse
+          console.log(data.employee.id);
           window.location.href = `/employees/${data.employee.id}/`
         })
         .catch(error => console.error('Erreur lors de la requête:', error));
     }
 
-    sendData(pEmployee_roulette);
+
+    setTimeout(() => sendData(pEmployee_roulette), 200);
   }
 
 
