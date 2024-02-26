@@ -1,6 +1,7 @@
-<div class="general" >
+<div data-controller="search">
 <%= render "header"%>
 <%= render "top", top_employees: @top_employees%>
 <%= render "all_employees", employees: @employees%>
+<%= render "search_results", employees: @employees%>
 <%= render "/shared/footer"%>
 </div>

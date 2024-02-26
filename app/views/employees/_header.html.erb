@@ -41,7 +41,7 @@
     </div>
 
     <div class="features-search">
-      <form action="" class="form-search">
+      <form action="" class="form-search" data-action="submit->search#clear">
         <div class="input_search">
             <%= form_with url: employees_path, method: :get, class: "input-search" do %>
               <%= text_field_tag :query,
@@ -54,7 +54,9 @@
             <%= submit_tag "Rechercher", name: "", class: "button-pink card-animate" %>
             <% end %>
         </div>
-
+        <input type="text" id="query" name="name" data-action= "input->search#input_search" >
+         <%# <%= link_to "envoyer", root_path, method: :post, data: {action: "click->search#input_search"}, class: "button-query" %>
+         <%= link_to "envoyer", root_path(query: "4"),  method: :post, class: "button-pink btn-center mt-5 button-query" %>
 
       </form>
       <button class="button-pink btn-center mt-5" data-action="click->employe-roulette#modal">Employé Roulette</button>

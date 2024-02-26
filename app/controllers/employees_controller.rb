@@ -13,7 +13,10 @@ class EmployeesController < ApplicationController
     @employee_roulette = Employee.find_by(job_title: employee_name)
 
     if params[:query].present?
-      sql_query = "job_title ILIKE :query OR description ILIKE :query OR first_name ILIKE :query OR last_name ILIKE :query"
+      puts "------------------------"
+      puts "------------------------"
+      puts params[:query]
+      sql_query = "job_title ILIKE :query OR first_name ILIKE :query OR last_name ILIKE :query"
       @employees = Employee.where(sql_query, query: "%#{params[:query]}%")
     else
       @employees = Employee.all
