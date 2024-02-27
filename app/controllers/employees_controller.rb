@@ -6,7 +6,7 @@ class EmployeesController < ApplicationController
 
   def index
     @employees = Employee.all
-    @top_employees = @employees.sort_by { |employee| -employee[:rating] }
+    @top_employees = @employees.sort_by { |employee| -employee[:rating] if employee[:rating] =! nil}
     @top_employees = @top_employees[0, 3]
     @employee_roulette
 

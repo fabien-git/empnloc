@@ -20,8 +20,10 @@
           <p><% if employee.rating %>
  <%employee.rating.times do %>
  <i class="fa-solid fa-star pink"></i>
- <% end %><% end %>
+ <% end %>(<%= employee.reviews.count %>)<% end %></p>
 <!-- Fin Ajout fonctionnalité rating -->
+
+
 
           <p class="card-price"><span class="span-pink"><%= employee.price_per_day %> €</span></p>
           <%= link_to "Plus d'informations", employee_path(employee), class:"button-pink btn-center" %>

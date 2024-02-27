@@ -90,7 +90,7 @@ giselle_file = URI.open('https://res.cloudinary.com/dvarz39fw/image/upload/v1708
 giselle.avatar.attach(io: giselle_file, filename: "giselle.jpg", content_type: "image/jpg")
 giselle.save
 
-alexia = Employee.new(first_name: "Alexia", last_name: "Roux", job_title: "Rouleuse de cigarette les yeux fermés", price_per_day: 60, user: tintin, description: "Alexia roule des cigarettes les yeux fermés depuis l'âge de 10 ans. Tout a commencé lorsqu'elle a perdu un pari avec ses amis et depuis, elle a développé une technique infaillible pour rouler des cigarettes les yeux fermés. Elle est disponible pour vous apprendre cette technique. ");
+alexia = Employee.new(first_name: "Alexia", last_name: "Roux", job_title: "Rouleuse de cigares les yeux fermés", price_per_day: 60, user: tintin, description: "Alexia roule des cigares et des cigarettes les yeux fermés depuis l'âge de 10 ans. Tout a commencé lorsqu'elle a perdu un pari avec ses amis et depuis, elle a développé une technique infaillible pour rouler des cigares et cigarettes les yeux fermés. Elle est disponible pour vous apprendre cette technique. ");
 alexia_file = URI.open('https://res.cloudinary.com/dvarz39fw/image/upload/v1708508011/qunltud7i9ctrha0eht2.jpg')
 alexia.avatar.attach(io: alexia_file, filename: "alexia.jpg", content_type: "image/jpg")
 alexia.save
@@ -105,12 +105,12 @@ puts "#{Employee.count} employees created!"
 puts "Creating reviews ..."
 employees = Employee.all
 employees.each do |employee|
-  commentaires =['Une place VIP réservée pour vous, la star du jour! On prépare déjà le tapis rouge',
-  "Préparez-vous à être chouchouté comme une licorne dans un champ de cupcakes. Réservation confirmée",
-  " Un parcours de transformation inspirant. J'ai retrouvé ma motivation grâce à des encouragements plus forts que mon réveil matin!",
-  "Atelier d'art : Une explosion créative! J'ai manié le pinceau comme un artiste maudit en quête d'absolu. Résultat : un chef-d'œuvre à faire rougir Picasso!",
-  "Une expérience zen qui m'a fait voyager jusqu'aux confins de mon esprit. J'ai retrouvé la flexibilité d'un chat en quête de croquettes",
-  "ne expérience relaxante à souhait. J'ai flotté comme une méduse dans l'océan de la sérénité"
+  commentaires =["Cet employé est une star ! J'ai passé un moment inoubliable. Je recommande vivement.",
+  "Préparez-vous à être ébloui par cet employé. J'ai passé un moment hors du commun. Je recommande vivement.",
+  "Quelle expérience incroyable ! Cet employé est un véritable artiste. Je recommande vivement.",
+  "Si vous cherchez une expérience unique, c'est l'employé qu'il vous faut. Je recommande vivement.",
+  "Un moment hors du temps qui m'a fait voyager dans un univers parallèle. Je recommande vivement cet employé !",
+  "Une expérience unique à souhait. Je recommande vivement cet employé !"
 ];
   numbers_review =  rand(2..6)
   numbers_review.times do
