@@ -9,19 +9,21 @@ export default class extends Controller {
   }
 
   clear(event) {
-
-
     fetch(`/?query=${event.target.value}`, { headers: { "Accept": "text/plain" } })
       .then(response => response.text())
       .then((data) => {
         this.displayHTML(data);
-
       })
+
   }
   displayHTML(html) {
     const allEmployees = document.querySelector('.top-employee');
     //const allEmployees = document.querySelector('.all-employees');
     allEmployees.outerHTML = html;
+    const title = document.querySelector('.title_top');
+    console.log(title);
+    title.textContent = "Les résultats";
+    console.log(title);
   }
 
   input_search() {
