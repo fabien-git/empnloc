@@ -14,8 +14,14 @@
     </li>
     <% @appointments.each do |appointment| %>
     <li class="grid-cards">
-       <p class="child-element"><%= appointment.debut_de_reservation %></p>
-       <p class="child-element"><%= appointment.fin_de_reservation %></p>
+       <p class="child-element">
+        <% date= appointment.debut_de_reservation.to_time %>
+        <%= date.strftime("Du %d %B %Y") %>
+        </p>
+       <p class="child-element">
+        <%date= appointment.fin_de_reservation %>
+        <%= date.strftime("Au %d %B %Y") %>
+       </p>
        <p class="child-element"><%= appointment.employee.first_name + "  " +appointment.employee.last_name %></p>
        <p class="child-element"><%= appointment.employee.job_title %></p>
        <p class="child-element"><%= appointment.renting_days %></p>

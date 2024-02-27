@@ -4,13 +4,13 @@
   <div class="employee-container">
     <div class="card expand shadow ">
         <div class="card-gradient">
-          <div class="card-avatar">
+          <div class="card-avatar-show ">
             <% if @employee.avatar.key != nil %>
-            <%= cl_image_tag @employee.avatar.key, width: 150, height: 150, crop: :fill %>
+            <%= cl_image_tag @employee.avatar.key, width: 150, height: 150, crop: :fill ,class: "shadow" %>
             <% end %>
           </div>
         </div>
-        <div class="card-info">
+        <div class="card-info-show">
           <p class="card-job"><%= @employee.job_title %></p>
           <p class="card-name"><%= @employee.first_name %> <%= @employee.last_name %></p>
            <% if @average_rating != nil %>
@@ -19,8 +19,8 @@
             <i class="fa-solid fa-star pink"></i>
             <% end %>
           <% end %>
-          <p class="card-description"><%= @employee.description %></p>
-          <p class="card-price" > <span data-complete-form-target="price"><%= @employee.price_per_day %></span> €</p>
+          <p class="card-description-show"><%= @employee.description %></p>
+          <p class="card-price-show" > <span data-complete-form-target="price"><%= @employee.price_per_day %> €</span> </p>
           <div class="group-button input_search ">
 
           </div>
@@ -38,7 +38,7 @@
         <%= f.input :renting_days,label: false, input_html: { class: "commande-orders__employee", data: { target: 'complete-form.renting' } } %>
         <%= f.label :total_price, label: 'Prix total' %>
         <%= f.input :total_price,readonly: true,label: false,input_html: { class: "commande-orders__employee" , data: { target: 'complete-form.totalprice' } }   %>
-      <%= f.submit "Commander",  class: "button-commande"  %>
+      <%= f.submit "Commander",  class: "button-pink btn-center"  %>
       </div>
       <% end %>
   </div>

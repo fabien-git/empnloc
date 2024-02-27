@@ -17,10 +17,15 @@ export default class extends Controller {
         this.displayHTML(data);
 
       })
+    const allEmployees = document.querySelector('.top-employee');
+
+
   }
   displayHTML(html) {
     const allEmployees = document.querySelector('.top-employee');
     allEmployees.outerHTML = html;
+
+
     const title = document.querySelector('.title_top');
     title.textContent = "Les résultats"
   }
