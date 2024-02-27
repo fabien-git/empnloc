@@ -6,7 +6,7 @@
   min-height:200vh;
   min-width: 100vw;
   background-color: rgba(0,0,0,0.6);
-  padding-top: 130px;
+  padding-top: 180px;
   z-index: 20;
 }
 
@@ -19,7 +19,7 @@
   transform: skewX(-10deg);
   width: 600px;
   height: 500px;
-  padding-top: 50px;
+  padding-top: 70px;
   border: 6px dashed white;
     animation:  linear 0.3s slidein
 }
@@ -54,21 +54,21 @@
   }
 }
 
-.random-job p:nth-child(2){
+.random-job p:nth-child(3){
     color:rgb(173, 173, 173);
   }
-.random-job p:nth-child(3){
+.random-job p:nth-child(4){
     color:rgb(128, 126, 126);
   }
-.random-job p:nth-child(4){
+.random-job p:nth-child(5){
         background-color: #3C87A6;
         padding:8px 0;
     color:rgb(255, 255, 255);
   }
-.random-job p:nth-child(5){
+.random-job p:nth-child(6){
     color:rgb(102, 102, 102);
   }
-.random-job p:nth-child(6){
+.random-job p:nth-child(7){
     color:rgb(173, 173, 173);
   }
 
@@ -91,4 +91,18 @@
      color: white;
      border: 3px solid white;
   }
+}
+
+
+.triangle{
+  position: absolute;
+  top:50%;
+  left: -90px;
+  transform: translateY(-50%);
+  width: 0px;
+  height: 0px;
+  border-style: solid;
+  border-width: 50px;
+  border-color: transparent transparent transparent #3C87A6;
+
 }

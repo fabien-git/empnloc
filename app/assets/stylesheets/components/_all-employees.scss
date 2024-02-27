@@ -1,8 +1,24 @@
 .all-employees{
+  position: relative;
   background-color:#E2E2E2 ;
   padding-top: 100px;
   padding-bottom: 200px;
   position: relative;
+
+
+}
+
+.all-employees::before{
+  content:"";
+  position: absolute;
+  width:100%;
+  height:100%;
+  top: 0;
+  left: 0;
+  background-image: asset-url('fond_test.png') ;
+  filter: hue-rotate(160deg);
+  background-size: 15%;
+  opacity: 0.4;
 
 }
 .bottom-image{
