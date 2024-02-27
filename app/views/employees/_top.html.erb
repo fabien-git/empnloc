@@ -15,7 +15,7 @@
  <p><% if top_employee.rating %>
  <%top_employee.rating.times do %>
  <i class="fa-solid fa-star pink"></i>
- <% end %>
+ <% end %>(<%= top_employee.reviews.count %>)
 <% end %>
  </p>
 
