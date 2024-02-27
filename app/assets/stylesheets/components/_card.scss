@@ -26,6 +26,8 @@
 }
 
 
+
+
 .card-animate{
 
   transition: all 0.3s;
@@ -52,6 +54,19 @@
   }
 }
 
+.card-avatar-show{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 16px;
+
+  & > img {
+    border-radius: 50%;
+    border: 5px solid #F8A4A4;
+  }
+}
+
 .card-info{
   padding: 8px;
   font-weight: normal;
@@ -61,24 +76,80 @@
   }
 }
 
+.card-info-show{
+  position: relative;
+  padding: 16px;
+  font-weight: normal;
+  height:100%;
+  z-index: 2;
+
+  i{
+    margin:8px 0;
+  }
+}
+.card-info-show:before{
+  position:absolute;
+  content:"";
+  width:150%;
+  height:40%;
+  bottom:0px;
+  right:0;
+  z-index: 1;
+
+}
+
+
 .card-job{
   font-weight: bolder;
   font-size: 24px!important;
   font-family:"Caveat", cursive ;
   margin: 0;
+  z-index: 2;
 }
 
 .card-description{
+  position: relative;
   display: block;
   font-weight: bolder;
-  font-size: 14px!important;
+  font-size: 14px;
   font-family:"Caveat", cursive ;
   overflow: hidden;
   text-overflow: ellipsis;
   height: 44px;
   margin: 0;
+  z-index: 2;
+}
+
+ .card-description-show{
+  position: relative;
+  background-color: #F8A4A4;
+  color: white;
+  display: block;
+  font-weight: bolder;
+  font-size: 20px!important;
+  font-family:"Caveat", cursive ;
+  overflow: hidden;
+  margin: 0;
+  z-index: 2;
+   margin-bottom: 24px;
+
+   border:#F8A4A4 1px solid;
+
+
 
 }
+
+.card-info-show i{
+    margin:24px 0;
+
+}
+
+.card-name{
+margin:0;
+font-size: 24px;
+ font-family:"Caveat", cursive ;
+}
+
 
 .price-pink{
   background-color: #F8A4A4;
@@ -94,6 +165,18 @@
   border-radius: 25px;
   text-align: center;
 }
+
+ .card-price-show span{
+
+ position: relative;
+ z-index: 2;
+ font-weight: bolder;
+ background:#F8A4A4;
+ color: white;
+ padding: 8px 16px;
+}
+
+
 
 .card-alink{
   display: block;
