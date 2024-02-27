@@ -30,6 +30,12 @@ h1, h2, h3 {
   font-optical-sizing: auto;
 }
 
+.caveat{
+  font-family: "Caveat", cursive;
+  font-weight: 100;
+  font-size: 24px;
+}
+
 .flex{
   display: flex;
   justify-content: space-between;
@@ -53,7 +59,7 @@ h1, h2, h3 {
 }
 
 .expand{
-  width: 100%;
+  width: 74%;
 }
 
 .group-button{
