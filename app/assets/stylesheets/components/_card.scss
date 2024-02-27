@@ -1,12 +1,19 @@
 .cards{
   display: flex;
+  position: relative;
   flex-wrap: wrap;
   gap: 32px;
  margin-top: 50px;
  padding-bottom: 20px;
  z-index: 3;
  position: relative;
+ width:100%;
 
+}
+.top-image{
+  position: absolute;
+  right: -60px;
+  top: -200px;
 }
 
 .card{
