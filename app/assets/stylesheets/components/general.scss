@@ -18,19 +18,23 @@ body{
 
 h2{
   font-size: 36px;
-  font-weight: 800;
-  font-family: "Caveat", cursive;
-  font-optical-sizing: auto;
 }
 
 h1{
   font-size: 48px;
+}
+
+h1, h2, h3 {
   font-weight: 800;
   font-family: "Caveat", cursive;
   font-optical-sizing: auto;
 }
 
-
+.caveat{
+  font-family: "Caveat", cursive;
+  font-weight: 100;
+  font-size: 24px;
+}
 
 .flex{
   display: flex;
@@ -57,7 +61,7 @@ h1{
 }
 
 .expand{
-  width: 100%;
+  width: 74%;
 }
 
 .group-button{

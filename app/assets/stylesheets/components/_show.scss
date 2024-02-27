@@ -1,13 +1,12 @@
 .container__show {
   justify-content: space-between;
-  align-items: center;
+  align-items: stretch;
   gap: 16px;
 }
 
-// .employee-container{
-  // width: 50%;
-  // padding-top: 50px;
-// }
+.employee-container{
+  display: flex;
+}
 
 // .panier-container{
   // width: 50%;
