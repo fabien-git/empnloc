@@ -131,3 +131,17 @@
 .border-pink{
   border: 2px solid #F8A4A4!important;
 }
+
+.arrow{
+  background: asset-url('arrow.png');
+  background-position: center;
+
+background-size: contain;
+background-repeat:no-repeat;
+transform: rotate(-90deg);
+filter: invert(1) drop-shadow(15px 10px 4px #F8A4A4);;
+  width: 300px;
+
+
+
+}
