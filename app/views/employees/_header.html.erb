@@ -9,22 +9,6 @@
   </div>
   <div class="container flex">
     <div class="header-title">
-    <!-- <div class="header-title-logo">
-        <%= image_tag "logo.png", class:"image-logo" %>
-        <div class="empnloc">
-          <h1 class="irish-grover-regular">empN'loc</h2>
-          <p>Trouver votre employé en toute simplicité</p>
-        </div>
-      </div>
-      <div>
-      <h2 class="irish-grover-regular">Réserver votre <br>employé</h1>
-      <p>Trouver pour chaque situation une personne qualifiée comme
-              un nettoyeur d'écrans de cinéma, un éleveur d’insectes,
-               un gumoliste</p>
-       </div>
-       <div id="employee_img"></div>
-    </div>
-    -->
 
 
     <div class="header-title-logo">
@@ -47,19 +31,19 @@
               <%= text_field_tag :query,
                 params[:query],
                 class: "form-control",
-                placeholder: "Employé recherché"
+                placeholder: "Employé recherché",
+                data: {action: "input->search#clear"}
               %>
         </div>
         <div class="input_search">
             <%= submit_tag "Rechercher", name: "", class: "button-pink card-animate" %>
             <% end %>
         </div>
-        <input type="text" id="query" name="name" data-action= "input->search#input_search" >
-         <%# <%= link_to "envoyer", root_path, method: :post, data: {action: "click->search#input_search"}, class: "button-query" %>
-         <%= link_to "envoyer", root_path(query: "4"),  method: :post, class: "button-pink btn-center mt-5 button-query" %>
+
+
 
       </form>
-      <button class="button-pink btn-center mt-5" data-action="click->employe-roulette#modal">Employés Roulette</button>
+      <div class="block-center mt-5" data-action="click->employe-roulette#modal"><span class="confetti-button animate">Employés Roulette</span></div>
       </div>
     </div>
 
