@@ -22,6 +22,8 @@ export default class extends Controller {
     const allEmployees = document.querySelector('.top-employee');
     //const allEmployees = document.querySelector('.all-employees');
     allEmployees.outerHTML = html;
+    const title = document.querySelector('.top-employee');
+    title.textContent = "Les résultats"
   }
 
   input_search() {

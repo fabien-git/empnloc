@@ -17,10 +17,11 @@
           <p class="card-description"><%= employee.description %></p>
 
 <!-- Ajout fonctionnalité rating -->
-          <p><% if employee.rating %>
- <%employee.rating.times do %>
- <i class="fa-solid fa-star pink"></i>
- <% end %>(<%= employee.reviews.count %>)<% end %></p>
+          <p>
+            <% if employee.rating %>
+              <%employee.rating.times do %>
+                <i class="fa-solid fa-star pink"></i>
+              <% end %>(<%= employee.reviews.count %>)<% end %></p>
 <!-- Fin Ajout fonctionnalité rating -->
 
 

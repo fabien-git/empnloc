@@ -12,7 +12,7 @@ export default class extends Controller {
 
 
   result() {
-    const pEmployee_roulette = document.querySelector('.random-job p:nth-child(4)').textContent;
+    const pEmployee_roulette = document.querySelector('.random-job p:nth-child(5)').textContent;
     const modal = document.querySelector('.modal-roulette-content');
     modal.classList.add('slideout');
     modal.style.transform = "skewX(-10deg) translateX(-200%)";

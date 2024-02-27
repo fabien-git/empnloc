@@ -1,7 +1,8 @@
 .footer{
 
-  height:400px;
+
   background-color:#71A8B5 ;
+
 }
 
 
@@ -30,3 +31,45 @@
     transform: skewY(-3deg);
   }
  }
+
+
+ .gros-titre{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+
+  span{
+  font-size: 150px;
+  font-family: "Irish Grover", system-ui;
+  font-weight: bolder;
+  font-style: normal;
+  color:white;
+  opacity: 0.5;
+  }
+ }
+
+ .footer-links {
+  display: flex;
+  align-items: center;
+}
+.footer-links a {
+  color: #F8A4A4;
+  opacity: 1;
+  text-decoration: none;
+  font-size: 40px;
+  padding: 0px 10px;
+}
+.footer-links a:hover {
+  opacity: 1;
+}
+.footer .fa-ban {
+  color: #F8A4A4;
+}
+
+.footer-copyright{
+  font-size:24px;
+
+
+}
