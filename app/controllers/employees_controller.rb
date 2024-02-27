@@ -6,14 +6,7 @@ class EmployeesController < ApplicationController
 
   def index
     @employees = Employee.all
-    @top_employees = @employees.sort_by do|employee|
-      if employee[:rating]
-        -employee[:rating]
-      else
-        employee[:price_per_day]
-      end
-    end
-
+    @top_employees = @employees.sort_by { |employee| -employee[:rating] }
     @top_employees = @top_employees[0, 3]
     @employee_roulette
 
@@ -29,14 +22,6 @@ class EmployeesController < ApplicationController
     else
       @employees = Employee.all
     end
-
-
-#    respond_to do | format |
-#    format.html # Follow regular flow of Rails
-#    format.text do
-#    render partial: "offers/list_times", locals: { services_time: @services_time, service: }, formats: : html
-#    end
-#    end
   end
 
 
@@ -56,17 +41,20 @@ class EmployeesController < ApplicationController
 
 
   def show
+
     @employee = Employee.find(params[:id])
     @appointment = Appointment.new
     @reviews = Review.where(employee: params[:id])
     @review = Review.new
     total_rating = 0
     if @reviews.present?
-        @reviews.each do |review|
-        total_rating += review.rating
-      end
-      @average_rating = (total_rating / @reviews.count).round
+      @reviews.each do |review|
+      total_rating += review.rating
     end
+    @average_rating = (total_rating / @reviews.count).round
+  end
+
+
   end
 
   def new
@@ -75,7 +63,6 @@ class EmployeesController < ApplicationController
 
   def create
     @employee = Employee.new(employee_params)
-    @employee.rating = 1;
     @employee.avatar.attach(io: URI.open(params[:employee][:avatar]), filename: "jean.jpg", content_type: "image/jpg")
     # @employee.avatar.attach(io: URI.open(), filename: "jean.jpg", content_type: "image/jpg")
     @employee.user = current_user

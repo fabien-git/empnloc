@@ -54,11 +54,12 @@
             <%= submit_tag "Rechercher", name: "", class: "button-pink card-animate" %>
             <% end %>
         </div>
-
-
+        <input type="text" id="query" name="name" data-action= "input->search#input_search" >
+         <%# <%= link_to "envoyer", root_path, method: :post, data: {action: "click->search#input_search"}, class: "button-query" %>
+         <%= link_to "envoyer", root_path(query: "4"),  method: :post, class: "button-pink btn-center mt-5 button-query" %>
 
       </form>
-      <div class="block-center mt-5" data-action="click->employe-roulette#modal"><span class="confetti-button animate">Employés Roulette</span></div>
+      <button class="button-pink btn-center mt-5" data-action="click->employe-roulette#modal">Employés Roulette</button>
       </div>
     </div>
 
