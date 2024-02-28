@@ -20,6 +20,7 @@ export default class extends Controller {
 
 
     function sendData(pEmployee_roulette) {
+      console.log(pEmployee_roulette);
       fetch('/employees/fetch_employee_data', {
         method: 'POST',
         headers: {
