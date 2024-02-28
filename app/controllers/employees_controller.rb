@@ -36,6 +36,9 @@ class EmployeesController < ApplicationController
 
  def fetch_employee_data
     employee_name = params[:data]
+    puts '----------------------------'
+    puts employee_name
+    puts '----------------------------'
     employee = Employee.find_by(job_title: employee_name)
     render json: { employee: employee }
   end
