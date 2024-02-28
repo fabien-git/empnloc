@@ -38,7 +38,7 @@
         <%= f.input :renting_days,label: false, input_html: { class: "commande-orders__employee", data: { target: 'complete-form.renting' } } %>
         <%= f.label :total_price, label: 'Prix total' %>
         <%= f.input :total_price,readonly: true,label: false,input_html: { class: "commande-orders__employee" , data: { target: 'complete-form.totalprice' } }   %>
-      <%= f.submit "Commander",  class: "button-pink btn-center"  %>
+      <%= f.submit "Commander", data: { turbo_confirm: "Votre commande est validé"},  class: "button-pink btn-center"  %>
       </div>
       <% end %>
   </div>

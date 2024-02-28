@@ -66,7 +66,7 @@ class EmployeesController < ApplicationController
     # @employee.avatar.attach(io: URI.open(), filename: "jean.jpg", content_type: "image/jpg")
     @employee.user = current_user
     if @employee.save
-      redirect_to employee_path(@employee)
+      redirect_to root_path
     else
       render :new, status: :unprocessable_entity
     end

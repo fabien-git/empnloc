@@ -71,8 +71,7 @@
 .form-container{
   width:50%;
   max-width: 500px;
-
-
+  z-index:2;
   background-color: #96C3D6;
   border-radius: 35px;
   padding: 16px;
@@ -89,9 +88,9 @@
     padding-top: 90px;
 }
 
-// .form-avatar{
-//   width: 40%;
-// }
+ .form-avatar{
+  z-index:2;
+ }
 
 
 .form-avatar-container{
@@ -135,12 +134,12 @@
 .arrow{
   background: asset-url('arrow.png');
   background-position: center;
-
 background-size: contain;
 background-repeat:no-repeat;
 transform: rotate(-90deg);
-filter: invert(1) drop-shadow(15px 10px 4px #F8A4A4);;
+filter: invert(1) drop-shadow(15px 10px 4px #F8A4A4);
   width: 300px;
+  z-index:1;
 
 
 
