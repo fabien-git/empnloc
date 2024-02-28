@@ -19,9 +19,9 @@ class AppointmentsController < ApplicationController
     @appointment.employee = @employee
     @appointment.save!
     if @appointment.save
-      redirect_to employee_path(@employee)
-    else
       redirect_to root_path
+    else
+      render :new, status: :unprocessable_entity
     end
   end
 
